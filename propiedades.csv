@@ -1,0 +1,4 @@
+Titulo,Operacion,Precio,Tipo,Comuna,Dormitorios,Banos,Superficie,Descripcion,Publicada
+Casa familiar con patio,Venta,UF 4.500,Casa,Temuco,3,2,120 m²,Ejemplo para probar el formato — reemplazar por una propiedad real.,checked
+Departamento céntrico,Arriendo,$450.000 al mes,Departamento,Temuco Centro,2,1,55 m²,Ejemplo para probar el formato — reemplazar por una propiedad real.,checked
+Terreno urbano,Venta,UF 2.000,Terreno,Padre Las Casas,0,0,5.000 m²,Ejemplo para probar el formato — reemplazar por datos reales.,checked

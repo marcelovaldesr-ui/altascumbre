@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Altas Cumbres Propiedades | Corretaje y Gestión Inmobiliaria — A&P Asociados</title>
+<meta name="description" content="Propiedades en venta y arriendo de Altas Cumbres Propiedades, el corretaje con respaldo jurídico de A&P Asociados: compraventa, promesas, estudio de títulos y acompañamiento legal.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#152944">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Altas Cumbres Propiedades — Corretaje con respaldo jurídico">
+<meta property="og:description" content="Propiedades en venta y arriendo con el respaldo jurídico de A&P Asociados.">
+<meta property="og:locale" content="es_CL">
+<meta property="og:image" content="logo-ayp.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23152944'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='23' font-weight='bold' fill='%23c9a97a' text-anchor='middle'%3EA%26amp;P%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="logo-ayp.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#152944;--navy-2:#1d3557;--ink:#1c2530;--muted:#5b6673;--line:#e6e9ee;
+    --bg:#ffffff;--bg-soft:#f6f8fb;--gold:#b08d57;--gold-soft:#c9a97a;--gold-ink:#8a6b3d;
+    --radius:14px;--max:1140px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:'Lora',Georgia,serif;color:var(--navy);line-height:1.2;font-weight:600}
+  a{color:inherit;text-decoration:none}
+  img,svg{max-width:100%}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  .skip{position:absolute;left:-9999px;top:0;background:var(--navy);color:#fff;padding:12px 18px;border-radius:0 0 8px 0;z-index:200}
+  .skip:focus{left:0}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:9px;font-weight:600;font-size:15px;transition:.2s;cursor:pointer;border:1px solid transparent}
+  .btn-primary{background:var(--navy);color:#fff}
+  .btn-primary:hover{background:var(--navy-2)}
+  .btn-gold{background:var(--gold);color:#152944}
+  .btn-gold:hover{background:var(--gold-soft)}
+  .btn-wa{background:#1f8f5f;color:#fff}
+  .btn-wa:hover{background:#1a7a51}
+  .eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-ink);font-weight:600;margin-bottom:14px}
+
+  /* Header (igual que la home) */
+  header{position:sticky;top:0;z-index:100;background:rgba(18,34,58,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.10)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .brand{display:flex;align-items:center;gap:12px;font-family:'Lora',serif;font-weight:700;font-size:22px;color:#fff}
+  .brand .brand-logo{height:48px;width:auto;display:block;flex:0 0 auto}
+  .brand small{display:block;font-family:'Inter',sans-serif;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#aeb9c9;font-weight:500;margin-top:2px}
+  nav ul{display:flex;gap:28px;list-style:none;font-size:15px;font-weight:500;align-items:center}
+  nav ul a{color:#dbe3ee;opacity:.9}
+  nav ul a:hover,nav ul a.active{opacity:1;color:#fff}
+  nav ul a.active{color:var(--gold-soft)}
+  .nav-cta{display:flex;align-items:center;gap:14px}
+  .nav-cta .btn-gold{padding:11px 20px}
+  .mob-cta{display:none}
+  .menu-btn{display:none;background:none;border:0;font-size:26px;color:#fff;cursor:pointer;padding:6px}
+
+  /* Intro */
+  .phero{background:linear-gradient(160deg,#0f2036,#152944 60%,#1d3557);color:#fff}
+  .phero .wrap{padding:64px 24px 72px;max-width:820px}
+  .phero .eyebrow{color:var(--gold-soft)}
+  .phero h1{color:#fff;font-size:clamp(30px,4.4vw,44px);font-weight:700;letter-spacing:-.5px}
+  .phero p{margin-top:18px;font-size:18px;color:#cfd8e4;max-width:640px}
+  .phero .respaldo{margin-top:22px;font-size:14px;color:#aab6c6;display:flex;align-items:center;gap:9px}
+  .phero .respaldo svg{color:var(--gold-soft);flex:0 0 auto}
+
+  /* Barra de filtros + nota */
+  .toolbar{border-bottom:1px solid var(--line);background:var(--bg-soft)}
+  .toolbar .wrap{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;padding:18px 24px}
+  .filters{display:flex;gap:10px;flex-wrap:wrap}
+  .chip{border:1px solid #d5dae2;background:#fff;color:var(--navy);font-size:14px;font-weight:500;padding:8px 18px;border-radius:40px;cursor:pointer;transition:.15s}
+  .chip:hover{border-color:var(--navy)}
+  .chip.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .demo-note{font-size:12.5px;color:var(--muted);font-style:italic}
+
+  /* Grilla de propiedades */
+  main section{padding:56px 0}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .prop{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;display:flex;flex-direction:column;transition:.2s;cursor:pointer}
+  .prop:hover{box-shadow:0 16px 44px -22px rgba(21,41,68,.5);transform:translateY(-3px);border-color:#d3dae4}
+  .prop .ph{position:relative;aspect-ratio:4/3;background:#e9edf2;overflow:hidden}
+  .prop .ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .badge{position:absolute;top:12px;left:12px;background:var(--navy);color:#fff;font-size:12px;font-weight:600;letter-spacing:.04em;padding:6px 12px;border-radius:30px}
+  .badge.arriendo{background:var(--gold-ink)}
+  .prop .body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .prop .loc{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:6px}
+  .prop h3{font-size:19px}
+  .prop .price{font-family:'Lora',serif;font-size:21px;color:var(--navy);font-weight:700}
+  .specs{display:flex;gap:16px;flex-wrap:wrap;margin-top:2px;padding-top:12px;border-top:1px solid var(--line);color:var(--ink);font-size:13.5px}
+  .specs span{display:flex;align-items:center;gap:6px}
+  .specs svg{color:var(--gold-ink)}
+  .prop .more{margin-top:12px;color:var(--navy);font-weight:600;font-size:14px;display:flex;align-items:center;gap:6px}
+  .empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:40px 0}
+
+  /* CTA vender */
+  .sell{background:var(--bg-soft);border-top:1px solid var(--line)}
+  .sell .card{background:linear-gradient(160deg,#152944,#1d3557);color:#fff;border-radius:20px;padding:48px 40px;text-align:center}
+  .sell h2{color:#fff;font-size:clamp(24px,3vw,32px)}
+  .sell p{color:#cfd8e4;max-width:560px;margin:14px auto 0}
+  .sell .actions{margin-top:28px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .sell .btn-gold{background:#fff;color:var(--navy)}
+  .sell .btn-gold:hover{background:#eef2f7}
+
+  /* Modal detalle */
+  .modal{position:fixed;inset:0;z-index:300;background:rgba(10,18,32,.6);display:none;align-items:flex-start;justify-content:center;padding:40px 16px;overflow-y:auto}
+  .modal.open{display:flex}
+  .modal-card{background:#fff;border-radius:16px;max-width:820px;width:100%;overflow:hidden}
+  .modal-gallery{position:relative;background:#e9edf2;aspect-ratio:16/9}
+  .modal-gallery img{width:100%;height:100%;object-fit:cover;display:block}
+  .gnav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(21,41,68,.75);color:#fff;border:0;width:42px;height:42px;border-radius:50%;cursor:pointer;font-size:20px;display:grid;place-items:center}
+  .gnav.prev{left:12px}.gnav.next{right:12px}
+  .gcount{position:absolute;bottom:12px;right:12px;background:rgba(21,41,68,.75);color:#fff;font-size:12px;padding:4px 10px;border-radius:20px}
+  .modal-x{position:absolute;top:12px;right:12px;background:rgba(21,41,68,.75);color:#fff;border:0;width:38px;height:38px;border-radius:50%;font-size:20px;cursor:pointer;z-index:2}
+  .modal-body{padding:26px 28px 28px}
+  .modal-body .top{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:flex-start}
+  .modal-body h2{font-size:25px}
+  .modal-body .price{font-family:'Lora',serif;font-size:24px;color:var(--navy);font-weight:700}
+  .modal-body .loc{color:var(--muted);font-size:14px;margin-top:4px}
+  .modal-specs{display:flex;gap:22px;flex-wrap:wrap;margin:18px 0;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .modal-specs div{font-size:14px}.modal-specs b{display:block;font-family:'Lora',serif;color:var(--navy);font-size:18px}
+  .modal-desc{color:var(--muted);font-size:15.5px;line-height:1.7}
+  .modal-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+
+  /* Footer */
+  footer{background:var(--navy);color:#c4cdda;padding:52px 0 28px}
+  .foot{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
+  .foot p{margin-top:14px;font-size:14.5px;color:#a9b4c3;max-width:300px}
+  .foot h4{color:#fff;font-family:'Inter';font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px}
+  .foot nav a{display:block;color:#c4cdda;padding:5px 0;font-size:14.5px}
+  .foot nav a:hover{color:#fff}
+  .copy{border-top:1px solid rgba(255,255,255,.12);margin-top:36px;padding-top:20px;font-size:13px;color:#8b97a8;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  @media(max-width:900px){
+    .grid{grid-template-columns:1fr 1fr}
+    nav ul{display:none}
+    .menu-btn{display:block}
+    .nav-cta .btn-gold{display:none}
+    nav ul.open{display:flex;flex-direction:column;align-items:flex-start;position:absolute;top:72px;right:16px;left:16px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 20px;gap:10px;box-shadow:0 24px 60px -18px rgba(21,41,68,.45);z-index:130}
+    nav ul.open a{color:var(--ink);opacity:1}
+    nav ul.open a.active{color:var(--gold-ink)}
+  }
+  @media(max-width:620px){ .grid{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+<a class="skip" href="#listado">Saltar al listado</a>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="A&amp;P Asociados, inicio">
+      <img class="brand-logo" src="logo-ayp-crest.png" alt="Emblema de A&amp;P Asociados">
+      <span>A&amp;P Asociados<small>Estudio Jurídico</small></span>
+    </a>
+    <nav aria-label="Navegación principal"><ul id="menu-principal">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="index.html#areas">Servicios</a></li>
+      <li><a href="propiedades.html" class="active" aria-current="page">Propiedades</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul></nav>
+    <div class="nav-cta">
+      <a class="btn btn-gold" href="index.html#consulta">Agendar consulta</a>
+      <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- INTRO -->
+<section class="phero">
+  <div class="wrap">
+    <p class="eyebrow">Altas Cumbres Propiedades</p>
+    <h1>Propiedades en venta y arriendo</h1>
+    <p>Le ayudamos a comprar, vender o arrendar con el respaldo jurídico de A&amp;P Asociados: revisamos títulos, contratos y promesas para que la operación sea segura de principio a fin.</p>
+    <p class="respaldo">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+      Cada operación con acompañamiento y revisión legal.
+    </p>
+  </div>
+</section>
+
+<!-- FILTROS -->
+<div class="toolbar">
+  <div class="wrap">
+    <div class="filters" id="filters" role="tablist" aria-label="Filtrar propiedades">
+      <button class="chip active" data-f="todas" role="tab" aria-selected="true">Todas</button>
+      <button class="chip" data-f="Venta" role="tab" aria-selected="false">En venta</button>
+      <button class="chip" data-f="Arriendo" role="tab" aria-selected="false">En arriendo</button>
+    </div>
+    <!-- Nota honesta: mientras no se carguen las propiedades reales, se muestran ejemplos. -->
+    <span class="demo-note">Vista de ejemplo — aquí se publicarán las propiedades disponibles.</span>
+  </div>
+</div>
+
+<!-- LISTADO -->
+<section id="listado">
+  <div class="wrap">
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<!-- CTA: ¿quiere vender/arrendar? -->
+<section class="sell">
+  <div class="wrap">
+    <div class="card">
+      <h2>¿Tiene una propiedad para vender o arrendar?</h2>
+      <p>Publicamos su propiedad y gestionamos la operación con respaldo legal: tasación referencial, difusión, negociación y contratos.</p>
+      <div class="actions">
+        <a class="btn btn-gold" href="index.html#contacto">Publicar mi propiedad</a>
+        <a class="btn btn-wa" href="#" data-wa>Consultar por WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- MODAL DETALLE -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Detalle de la propiedad">
+  <div class="modal-card">
+    <div class="modal-gallery">
+      <button class="modal-x" id="mClose" aria-label="Cerrar">&times;</button>
+      <img id="mImg" alt="">
+      <button class="gnav prev" id="mPrev" aria-label="Foto anterior">‹</button>
+      <button class="gnav next" id="mNext" aria-label="Foto siguiente">›</button>
+      <span class="gcount" id="mCount"></span>
+    </div>
+    <div class="modal-body">
+      <div class="top">
+        <div>
+          <h2 id="mTitle"></h2>
+          <div class="loc" id="mLoc"></div>
+        </div>
+        <div class="price" id="mPrice"></div>
+      </div>
+      <div class="modal-specs" id="mSpecs"></div>
+      <p class="modal-desc" id="mDesc"></p>
+      <div class="modal-actions">
+        <a class="btn btn-wa" id="mWa" href="#" data-wa-detalle>Consultar esta propiedad</a>
+        <a class="btn btn-primary" href="index.html#contacto">Agendar visita</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <img src="logo-ayp-transparent.png" alt="A&amp;P Asociados — Estudio Jurídico" style="width:200px;max-width:100%;height:auto;display:block;margin-bottom:8px">
+        <p>Altas Cumbres Propiedades — corretaje con el respaldo jurídico de A&amp;P Asociados.</p>
+      </div>
+      <div>
+        <h4>Navegación</h4>
+        <nav aria-label="Pie de página">
+          <a href="index.html">Inicio</a>
+          <a href="index.html#areas">Servicios</a>
+          <a href="propiedades.html">Propiedades</a>
+          <a href="index.html#contacto">Contacto</a>
+        </nav>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <nav aria-label="Datos de contacto">
+          <a href="index.html#contacto">18 de Septiembre 246, Of. 408</a>
+          <a href="mailto:gestionesjuridicas.ayp@gmail.com">gestionesjuridicas.ayp@gmail.com</a>
+          <a href="index.html#contacto">Lun a Vie · 09–13 y 15–18 h</a>
+        </nav>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2026 A&amp;P Asociados. Todos los derechos reservados.</span>
+      <span>Sitio desarrollado por Respondo</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ================================================================
+   CONFIGURACIÓN (mantener igual que en index.html)
+   ================================================================ */
+var CONFIG = {
+  whatsapp: "",   // <-- INSERTAR número real (ej "56912345678"). Vacío = va al formulario.
+  email: "gestionesjuridicas.ayp@gmail.com",
+  // ==== AIRTABLE (para que el estudio administre las propiedades solo) ====
+  // Complete estos 3 datos siguiendo la guía "Guia-Propiedades-Airtable-y-Deploy.md".
+  // Mientras estén vacíos, se muestran las propiedades de ejemplo.
+  // Al completarlos, la página lee automáticamente desde Airtable.
+  airtable: {
+    token: "patyLPGvJGeToKvpx.326e85c59228aa2613c879d216399923acaef069a850d6e5107c87ae9604780d",                        // <-- Personal Access Token de Airtable (solo lectura). FALTA ESTE.
+    baseId: "appQzKndZ0T219Hkr",      // Base "Altas Cumbres Propiedades" (ya creada)
+    tabla: "Propiedades"              // nombre exacto de la tabla
+  }
+};
+
+/* ================================================================
+   PROPIEDADES
+   CÓMO AGREGAR UNA PROPIEDAD: copie un bloque { ... } dentro de la
+   lista y complete los datos. Para las fotos, guarde las imágenes en
+   una carpeta "propiedades/" y ponga las rutas en "fotos", por ejemplo:
+     fotos: ["propiedades/casa1-1.jpg", "propiedades/casa1-2.jpg"]
+   Si deja "fotos" vacío, se muestra una imagen de marcador.
+   Campos: operacion "Venta" | "Arriendo".
+   Los ejemplos de abajo son PLACEHOLDERS: reemplazar por las reales.
+   ================================================================ */
+var PROPIEDADES = [
+  {
+    titulo: "Casa familiar con patio",
+    operacion: "Venta",
+    precio: "UF 4.500",
+    tipo: "Casa",
+    comuna: "Temuco",
+    dormitorios: 3, banos: 2, superficie: "120 m²",
+    descripcion: "Casa de ejemplo para mostrar el formato. Reemplazar por una propiedad real: describa aquí ubicación, estado, terminaciones, estacionamientos y cualquier detalle relevante.",
+    fotos: []
+  },
+  {
+    titulo: "Departamento céntrico",
+    operacion: "Arriendo",
+    precio: "$450.000 / mes",
+    tipo: "Departamento",
+    comuna: "Temuco Centro",
+    dormitorios: 2, banos: 1, superficie: "55 m²",
+    descripcion: "Departamento de ejemplo. Reemplazar por una propiedad real con su descripción, gastos comunes, amoblado o no, y condiciones de arriendo.",
+    fotos: []
+  },
+  {
+    titulo: "Terreno urbano",
+    operacion: "Venta",
+    precio: "UF 2.000",
+    tipo: "Terreno",
+    comuna: "Padre Las Casas",
+    dormitorios: 0, banos: 0, superficie: "5.000 m²",
+    descripcion: "Terreno de ejemplo. Reemplazar por datos reales: rol, factibilidad, deslindes y uso de suelo.",
+    fotos: []
+  }
+];
+
+(function(){
+  var waMsg = encodeURIComponent("Hola, quisiera más información sobre una propiedad publicada por A&P Asociados.");
+  var hasWa = CONFIG.whatsapp.replace(/\D/g,"").length >= 8;
+  function waHref(text){
+    if(hasWa) return 'https://wa.me/'+CONFIG.whatsapp.replace(/\D/g,"")+'?text='+encodeURIComponent(text||"Hola, quisiera información sobre una propiedad.");
+    return 'index.html#contacto';
+  }
+  document.querySelectorAll('[data-wa]').forEach(function(a){
+    a.href=waHref(); if(hasWa){a.target='_blank';a.rel='noopener';}
+  });
+
+  // Imagen de marcador (placeholder) como SVG data-URI
+  function placeholder(tipo){
+    var svg="<svg xmlns='http://www.w3.org/2000/svg' width='400' height='300'>"
+      +"<rect width='400' height='300' fill='%23e9edf2'/>"
+      +"<g fill='none' stroke='%23aab6c6' stroke-width='2'>"
+      +"<path d='M150 170 l50 -40 l50 40 v50 h-100 z'/>"
+      +"<path d='M150 170 v50 M250 170 v50'/></g>"
+      +"<text x='200' y='250' font-family='Inter,sans-serif' font-size='15' fill='%238a97a8' text-anchor='middle'>Foto de la propiedad</text>"
+      +"</svg>";
+    return "data:image/svg+xml,"+svg.replace(/#/g,'%23').replace(/</g,'%3C').replace(/>/g,'%3E').replace(/ /g,'%20');
+  }
+  function firstPhoto(p){ return (p.fotos && p.fotos.length) ? p.fotos[0] : placeholder(p.tipo); }
+
+  var grid=document.getElementById('grid');
+  var note=document.querySelector('.demo-note');
+  var DATA=PROPIEDADES.slice();
+  var current="todas";
+
+  function specIcon(kind){
+    var m={
+      cama:"<path d='M3 12V7a1 1 0 011-1h16a1 1 0 011 1v5M3 12h18M3 12v5M21 12v5M6 6V5'/>",
+      bano:"<path d='M4 12h16v3a4 4 0 01-4 4H8a4 4 0 01-4-4v-3zM7 12V6a2 2 0 012-2'/>",
+      area:"<path d='M4 4h7v7H4zM13 13h7v7h-7z'/>"
+    };
+    return "<svg width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.6'>"+m[kind]+"</svg>";
+  }
+
+  function specsHtml(p, big){
+    var out=[];
+    if(p.dormitorios>0) out.push((big?"<div><b>"+p.dormitorios+"</b>dorm.</div>":"<span>"+specIcon('cama')+p.dormitorios+" dorm.</span>"));
+    if(p.banos>0) out.push((big?"<div><b>"+p.banos+"</b>baños</div>":"<span>"+specIcon('bano')+p.banos+" baños</span>"));
+    if(p.superficie) out.push((big?"<div><b>"+p.superficie+"</b>superficie</div>":"<span>"+specIcon('area')+p.superficie+"</span>"));
+    return out.join("");
+  }
+
+  function render(){
+    grid.innerHTML="";
+    var list=DATA.filter(function(p){return current==="todas"||p.operacion===current;});
+    if(!list.length){ grid.innerHTML='<p class="empty">No hay propiedades en esta categoría por ahora.</p>'; return; }
+    list.forEach(function(p){
+      var idx=DATA.indexOf(p);
+      var card=document.createElement('article');
+      card.className='prop'; card.tabIndex=0; card.setAttribute('role','button');
+      card.setAttribute('aria-label',p.titulo+', '+p.operacion);
+      card.innerHTML=
+        '<div class="ph"><img src="'+firstPhoto(p)+'" alt="'+p.titulo+' — '+p.comuna+'">'
+        +'<span class="badge '+(p.operacion==="Arriendo"?"arriendo":"")+'">'+p.operacion+'</span></div>'
+        +'<div class="body">'
+        +'<div class="loc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>'+p.tipo+' · '+p.comuna+'</div>'
+        +'<h3>'+p.titulo+'</h3>'
+        +'<div class="price">'+p.precio+'</div>'
+        +'<div class="specs">'+specsHtml(p,false)+'</div>'
+        +'<div class="more">Ver detalle <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>'
+        +'</div>';
+      card.addEventListener('click',function(){openModal(idx);});
+      card.addEventListener('keydown',function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();openModal(idx);}});
+      grid.appendChild(card);
+    });
+  }
+
+  // Filtros
+  document.querySelectorAll('.chip').forEach(function(c){
+    c.addEventListener('click',function(){
+      document.querySelectorAll('.chip').forEach(function(x){x.classList.remove('active');x.setAttribute('aria-selected','false');});
+      c.classList.add('active'); c.setAttribute('aria-selected','true');
+      current=c.dataset.f; render();
+    });
+  });
+
+  // Modal + galería
+  var modal=document.getElementById('modal'), mImg=document.getElementById('mImg'),
+      mPrev=document.getElementById('mPrev'), mNext=document.getElementById('mNext'),
+      mCount=document.getElementById('mCount'), gi=0, gphotos=[];
+  function showPhoto(){ mImg.src=gphotos[gi]; mCount.textContent=(gi+1)+' / '+gphotos.length;
+    var multi=gphotos.length>1; mPrev.style.display=mNext.style.display=multi?'grid':'none'; mCount.style.display=multi?'block':'none'; }
+  function openModal(i){
+    var p=DATA[i];
+    gphotos=(p.fotos&&p.fotos.length)?p.fotos.slice():[placeholder(p.tipo)]; gi=0; showPhoto();
+    document.getElementById('mTitle').textContent=p.titulo;
+    document.getElementById('mLoc').textContent=p.tipo+' · '+p.comuna;
+    document.getElementById('mPrice').textContent=p.precio;
+    document.getElementById('mSpecs').innerHTML=specsHtml(p,true)+'<div><b>'+p.operacion+'</b>operación</div>';
+    document.getElementById('mDesc').textContent=p.descripcion;
+    document.getElementById('mWa').href=waHref("Hola, me interesa la propiedad: "+p.titulo+" ("+p.comuna+", "+p.operacion+"). ¿Podrían darme más información?");
+    if(hasWa){document.getElementById('mWa').target='_blank';document.getElementById('mWa').rel='noopener';}
+    document.getElementById('mImg').alt = p.titulo + ' — ' + p.comuna;
+    modal.classList.add('open'); document.body.style.overflow='hidden';
+    document.getElementById('mClose').focus();
+  }
+  function closeModal(){ modal.classList.remove('open'); document.body.style.overflow=''; }
+  mPrev.addEventListener('click',function(){gi=(gi-1+gphotos.length)%gphotos.length;showPhoto();});
+  mNext.addEventListener('click',function(){gi=(gi+1)%gphotos.length;showPhoto();});
+  document.getElementById('mClose').addEventListener('click',closeModal);
+  modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});
+  document.addEventListener('keydown',function(e){if(e.key==="Escape")closeModal();});
+
+  // Menú móvil
+  var navList=document.querySelector('nav ul'), menuBtn=document.querySelector('.menu-btn');
+  menuBtn.addEventListener('click',function(){var o=navList.classList.toggle('open');menuBtn.setAttribute('aria-expanded',o?'true':'false');});
+
+  // ==== Carga desde Airtable (o ejemplos si aún no está configurado) ====
+  function useExamples(){
+    DATA=PROPIEDADES.slice();
+    if(note){ note.style.display=""; note.textContent="Vista de ejemplo — aquí se publicarán las propiedades disponibles."; }
+    render();
+  }
+  function loadAirtable(){
+    var A=CONFIG.airtable;
+    if(!A || !A.token || !A.baseId){ useExamples(); return; }
+    var url='https://api.airtable.com/v0/'+A.baseId+'/'+encodeURIComponent(A.tabla||'Propiedades')+'?pageSize=100';
+    fetch(url,{headers:{Authorization:'Bearer '+A.token}})
+      .then(function(r){ if(!r.ok) throw new Error('airtable'); return r.json(); })
+      .then(function(j){
+        var recs=(j.records||[]).map(function(rec){
+          var f=rec.fields||{};
+          var fotos=(f.Fotos||[]).map(function(a){ return (a.thumbnails&&a.thumbnails.large&&a.thumbnails.large.url)||a.url; });
+          return {
+            titulo:f.Titulo||'Propiedad', operacion:f.Operacion||'Venta', precio:f.Precio||'Consultar',
+            tipo:f.Tipo||'', comuna:f.Comuna||'', dormitorios:parseInt(f.Dormitorios)||0,
+            banos:parseInt(f.Banos)||0, superficie:f.Superficie||'', descripcion:f.Descripcion||'',
+            fotos:fotos, publicada:(f.Publicada!==false)
+          };
+        }).filter(function(p){ return p.publicada; });
+        if(!recs.length){ useExamples(); return; }
+        DATA=recs; if(note){ note.style.display='none'; } render();
+      })
+      .catch(function(){ useExamples(); });
+  }
+  loadAirtable();
+})();
+</script>
+</body>
+</html>

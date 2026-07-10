@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============================================================
+     SEO / METADATOS
+     TODO cliente: al tener dominio, reemplazar DOMINIO_REAL en
+     canonical y og:url (ej: https://aypasociados.cl)
+     ============================================================ -->
+<title>A&P Asociados — Estudio Jurídico en Chile | Penal, Familia y Laboral</title>
+<meta name="description" content="Estudio jurídico en Chile con más de 4 años de experiencia. Asesoría y defensa en Derecho Penal, de Familia y Laboral para personas y empresas. Atención reservada y comunicación clara desde el primer contacto.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#152944">
+<!-- IDIOMA: sitio en español (es-CL). El cliente marcó como deseable una versión en otro idioma.
+     Se deja para una futura iteración: no se incluye selector de idioma hasta contar con los textos
+     traducidos, para no mostrar un control inactivo. Al implementarlo, agregar aquí <link rel="alternate"
+     hreflang="en" href="..."> y un selector real que cambie de idioma. -->
+<!-- <link rel="canonical" href="https://DOMINIO_REAL/"> -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="A&P Asociados — Estudio Jurídico en Chile">
+<meta property="og:description" content="Asesoría y defensa legal en Derecho Penal, de Familia y Laboral para personas y empresas. Atención cercana y reservada.">
+<meta property="og:locale" content="es_CL">
+<!-- <meta property="og:url" content="https://DOMINIO_REAL/"> -->
+<meta name="twitter:card" content="summary">
+<meta property="og:image" content="logo-ayp.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23152944'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='23' font-weight='bold' fill='%23c9a97a' text-anchor='middle'%3EA%26amp;P%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="logo-ayp.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#152944;
+    --navy-2:#1d3557;
+    --ink:#1c2530;
+    --muted:#5b6673;
+    --line:#e6e9ee;
+    --bg:#ffffff;
+    --bg-soft:#f6f8fb;
+    --gold:#b08d57;         /* líneas y detalles decorativos */
+    --gold-soft:#c9a97a;    /* acentos sobre fondo oscuro */
+    --gold-ink:#8a6b3d;     /* dorado para texto (contraste AA) */
+    --radius:14px;
+    --max:1140px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:'Lora',Georgia,serif;color:var(--navy);line-height:1.2;font-weight:600}
+  a{color:inherit;text-decoration:none}
+  img,svg{max-width:100%}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+
+  /* Accesibilidad: enlace para saltar al contenido */
+  .skip{position:absolute;left:-9999px;top:0;background:var(--navy);color:#fff;padding:12px 18px;border-radius:0 0 8px 0;z-index:200}
+  .skip:focus{left:0}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 24px;border-radius:9px;font-weight:600;font-size:15px;transition:.2s;cursor:pointer;border:1px solid transparent}
+  .btn-primary{background:var(--navy);color:#fff}
+  .btn-primary:hover{background:var(--navy-2)}
+  .btn-ghost{background:transparent;color:var(--navy);border-color:#d5dae2}
+  .btn-ghost:hover{border-color:var(--navy);background:var(--bg-soft)}
+  .eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-ink);font-weight:600;margin-bottom:14px}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:100;background:rgba(18,34,58,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.10)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .brand{display:flex;align-items:center;gap:12px;font-family:'Lora',serif;font-weight:700;font-size:22px;color:#fff}
+  .brand .brand-logo{height:48px;width:auto;display:block;flex:0 0 auto}
+  .brand small{display:block;font-family:'Inter',sans-serif;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#aeb9c9;font-weight:500;margin-top:2px}
+  nav ul{display:flex;gap:28px;list-style:none;font-size:15px;font-weight:500;align-items:center}
+  nav ul a{color:#dbe3ee;opacity:.9}
+  nav ul a:hover{opacity:1;color:#fff}
+  .nav-cta{display:flex;align-items:center;gap:14px}
+  .nav-cta .btn-primary{background:var(--gold);color:#152944;border-color:var(--gold)}
+  .nav-cta .btn-primary:hover{background:var(--gold-soft)}
+  .mob-cta{display:none}
+  .menu-btn{display:none;background:none;border:0;font-size:26px;color:#fff;cursor:pointer;padding:6px}
+
+  /* Dropdown de servicios */
+  .has-drop{position:relative}
+  .has-drop > a{display:inline-flex;align-items:center;gap:6px;cursor:pointer}
+  .has-drop .caret{font-size:11px;transition:.2s;color:#aeb9c9}
+  .has-drop::after{content:"";position:absolute;top:100%;left:0;right:0;height:18px}
+  .drop{position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%) translateY(6px);min-width:290px;background:var(--navy);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:10px;box-shadow:0 26px 60px -18px rgba(21,41,68,.6);opacity:0;visibility:hidden;transition:.18s;z-index:60}
+  .has-drop:hover .drop,.has-drop:focus-within .drop{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+  .has-drop:hover .caret{transform:rotate(180deg)}
+  .drop a{display:block;color:#dbe3ee;padding:11px 15px;border-radius:8px;font-size:14.5px;font-weight:500;white-space:nowrap}
+  .drop a:hover{background:rgba(255,255,255,.10);color:#fff}
+  .drop .sep{height:1px;background:rgba(255,255,255,.13);margin:6px 8px}
+
+  /* Hero */
+  .hero{position:relative;background:linear-gradient(160deg,#0f2036 0%,#152944 55%,#1d3557 100%);color:#fff;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-120px;top:-120px;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(176,141,87,.18),transparent 70%)}
+  .hero .wrap{position:relative;padding:92px 24px 100px}
+  .hero .eyebrow{color:var(--gold-soft)}
+  .hero h1{color:#fff;font-size:clamp(33px,5vw,50px);font-weight:700;letter-spacing:-.5px}
+  .hero .lead{margin-top:22px;font-size:19px;color:#cfd8e4;max-width:640px}
+  .hero .actions{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+  .hero .btn-primary{background:var(--gold);color:#152944;border-color:var(--gold)}
+  .hero .btn-primary:hover{background:var(--gold-soft)}
+  .hero .btn-ghost{color:#fff;border-color:rgba(255,255,255,.35)}
+  .hero .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:#fff}
+  .hero-grid{display:grid;grid-template-columns:1.35fr .92fr;gap:48px;align-items:center}
+  .hero-copy{max-width:640px}
+  .hero-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:28px}
+  .hero-card .hc-title{font-family:'Lora',serif;font-size:18px;color:#fff;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.14)}
+  .hero-card ul{list-style:none;display:grid;gap:15px}
+  .hero-card li{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:#dbe3ee;line-height:1.45}
+  .hero-card li svg{color:var(--gold-soft);flex:0 0 auto;margin-top:1px}
+
+  /* Trust strip */
+  .trust{background:var(--bg-soft);border-bottom:1px solid var(--line)}
+  .trust .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 52px;padding:22px 24px;text-align:center}
+  .trust div{font-size:15px;color:var(--ink);font-weight:500;display:flex;align-items:center;gap:10px}
+  .trust b{color:var(--navy);font-family:'Lora',serif}
+  .trust .dot{color:var(--gold)}
+
+  /* Sections */
+  main section{padding:86px 0}
+  .section-head{max-width:680px;margin-bottom:50px}
+  .section-head h2{font-size:clamp(27px,3.4vw,37px)}
+  .section-head p{margin-top:14px;color:var(--muted);font-size:17px}
+
+  /* Áreas */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;background:#fff;transition:.2s}
+  .card:hover{box-shadow:0 14px 40px -22px rgba(21,41,68,.45);border-color:#d3dae4;transform:translateY(-3px)}
+  .card .ico{width:48px;height:48px;border-radius:11px;background:var(--bg-soft);display:grid;place-items:center;margin-bottom:18px;color:var(--navy);border:1px solid var(--line)}
+  .card h3{font-size:20px;margin-bottom:9px}
+  .card p{color:var(--muted);font-size:15px}
+  .more-areas{margin-top:34px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .more-areas span{font-size:14.5px;color:var(--ink);background:var(--bg-soft);border:1px solid var(--line);padding:8px 16px;border-radius:40px}
+  .more-areas .lbl{background:none;border:0;padding:0;color:var(--muted);font-weight:600}
+
+  /* Segmentos personas / empresas */
+  .seg{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .seg .card{display:flex;gap:16px;align-items:flex-start}
+  .seg .card .ico{flex:0 0 auto;margin-bottom:0}
+  .seg .card h3{margin-bottom:6px}
+
+  /* Estudio */
+  .estudio{background:var(--bg-soft)}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .split .txt h2{font-size:clamp(27px,3.4vw,36px);margin-bottom:20px}
+  .split .txt p{color:var(--muted);margin-bottom:16px;font-size:16.5px}
+  .values{list-style:none;margin-top:26px;display:grid;gap:14px}
+  .values li{display:flex;gap:12px;align-items:flex-start;font-size:16px;color:var(--ink)}
+  .values .chk{color:var(--gold-ink);flex:0 0 auto;margin-top:2px}
+  .quote{background:var(--navy);color:#fff;border-radius:var(--radius);padding:44px 40px}
+  .quote .q{font-family:'Lora',serif;font-size:24px;line-height:1.45;font-weight:600}
+  .quote .q span{color:var(--gold-soft)}
+  .quote .by{margin-top:22px;font-size:14px;color:#b9c4d3;letter-spacing:.04em}
+  .quote .backing{margin-top:22px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);font-size:14.5px;color:#cdd6e2;line-height:1.6}
+
+  /* Proceso */
+  .proc{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .proc .p{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 22px}
+  .proc .num{width:42px;height:42px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-family:'Lora',serif;font-weight:600;font-size:17px;margin-bottom:16px;border:1px solid var(--gold-soft)}
+  .proc h3{font-size:17px;margin-bottom:7px}
+  .proc p{color:var(--muted);font-size:14.5px}
+
+  /* Equipo */
+  .team{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .member{border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;background:#fff}
+  .member .avatar{width:56px;height:56px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-family:'Lora',serif;font-weight:700;font-size:18px;border:1px solid var(--gold-soft);margin-bottom:16px}
+  .member h3{font-size:18px;margin-bottom:3px}
+  .member .role{font-size:13px;color:var(--gold-ink);font-weight:600;letter-spacing:.02em;margin-bottom:10px}
+  .member p{color:var(--muted);font-size:14.5px;line-height:1.6}
+
+  /* Consulta / CTA band */
+  .band{background:linear-gradient(160deg,#152944,#1d3557);color:#fff;border-radius:20px;padding:56px 48px;text-align:center}
+  .band h2{color:#fff;font-size:clamp(26px,3.2vw,34px)}
+  .band p{color:#cfd8e4;max-width:580px;margin:16px auto 0;font-size:17px}
+  .band .steps{display:flex;justify-content:center;gap:14px 40px;flex-wrap:wrap;margin:34px 0}
+  .band .step{display:flex;align-items:center;gap:12px;font-size:15px;color:#e3e9f1}
+  .band .n{width:32px;height:32px;border-radius:50%;border:1px solid var(--gold-soft);color:var(--gold-soft);display:grid;place-items:center;font-family:'Lora',serif;font-weight:600;font-size:15px;flex:0 0 auto}
+  .band .actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .band .btn-primary{background:#fff;color:var(--navy)}
+  .band .btn-primary:hover{background:#eef2f7}
+  .band .btn-ghost{color:#fff;border-color:rgba(255,255,255,.4)}
+  .band .btn-ghost:hover{background:rgba(255,255,255,.08)}
+
+  /* FAQ */
+  .faq{max-width:840px}
+  .faq details{border:1px solid var(--line);border-radius:12px;background:#fff;margin-bottom:12px}
+  .faq summary{list-style:none;cursor:pointer;padding:17px 22px;font-weight:600;color:var(--navy);font-size:16px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";font-size:23px;color:var(--gold-ink);font-weight:400;transition:.2s;line-height:1}
+  .faq details[open] summary::after{transform:rotate(45deg)}
+  .faq details p{padding:0 22px 20px;color:var(--muted);font-size:15px;line-height:1.6;margin:0}
+
+  /* Contacto */
+  .contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px}
+  .contact .info h3{font-size:18px;margin:0 0 4px}
+  .contact .info .row{display:flex;gap:14px;padding:18px 0;border-bottom:1px solid var(--line)}
+  .contact .info .row:last-child{border-bottom:0}
+  .contact .info .ic{color:var(--gold-ink);flex:0 0 auto;margin-top:2px}
+  .contact .info .row div span{display:block;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}
+  .contact .info .row div b{font-weight:600;color:var(--ink);font-size:16px}
+  .contact .info .row div b a{color:var(--ink)}
+  .contact .info .row div b a:hover{color:var(--navy);text-decoration:underline}
+  .contact .info .pending{color:var(--muted);font-weight:500;font-style:italic}
+  form{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:32px}
+  .field{margin-bottom:18px}
+  label{display:block;font-size:14px;font-weight:600;color:var(--ink);margin-bottom:7px}
+  label .req{color:var(--gold-ink)}
+  input,select,textarea{width:100%;padding:12px 14px;border:1px solid #d7dce4;border-radius:9px;font-family:inherit;font-size:15px;color:var(--ink);background:#fff}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(21,41,68,.10)}
+  input:invalid:not(:placeholder-shown){border-color:#c0553f}
+  textarea{resize:vertical;min-height:110px}
+  form .btn-primary{width:100%;justify-content:center}
+  .form-note{font-size:12.5px;color:var(--muted);margin-top:12px;text-align:center}
+  .form-status{font-size:14px;margin-top:14px;padding:12px 14px;border-radius:9px;display:none}
+  .form-status.show{display:block}
+  .form-status.ok{background:#eaf5ef;color:#1f6b47;border:1px solid #bfe3d0}
+  .form-status.err{background:#fbece7;color:#a03b23;border:1px solid #f0cbbf}
+  .map{margin-top:40px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line)}
+  .map iframe{border:0;display:block;width:100%;height:340px}
+
+  /* Footer */
+  footer{background:var(--navy);color:#c4cdda;padding:56px 0 30px}
+  .foot{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
+  .foot .brand{color:#fff}
+  .foot .brand .mark{background:#fff;color:var(--navy)}
+  .foot p{margin-top:16px;font-size:14.5px;color:#a9b4c3;max-width:300px}
+  .foot h4{color:#fff;font-family:'Inter';font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px}
+  .foot nav a{display:block;color:#c4cdda;padding:5px 0;font-size:14.5px}
+  .foot nav a:hover{color:#fff}
+  .copy{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding-top:22px;font-size:13px;color:#8b97a8;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .copy a{color:#a9b4c3}
+
+  /* Chat de respuestas rápidas (local, sin IA) */
+  .cw-launch{position:fixed;right:20px;bottom:20px;z-index:120;width:60px;height:60px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;box-shadow:0 14px 34px -10px rgba(0,0,0,.5);cursor:pointer;border:1px solid var(--gold-soft);transition:.2s}
+  .cw-launch:hover{transform:scale(1.05)}
+  .cw-panel{position:fixed;right:20px;bottom:94px;z-index:121;width:344px;max-width:calc(100vw - 32px);background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 26px 64px -18px rgba(21,41,68,.55);overflow:hidden;display:none;flex-direction:column}
+  .cw-panel.open{display:flex}
+  .cw-head{background:var(--navy);color:#fff;padding:15px 18px;display:flex;align-items:center;gap:12px}
+  .cw-head .av{width:38px;height:38px;border-radius:50%;background:#fff;color:var(--navy);display:grid;place-items:center;font-family:'Lora',serif;font-weight:700;font-size:13px;border:1px solid var(--gold-soft);flex:0 0 auto}
+  .cw-head h4{font-family:'Lora',serif;font-size:16px;margin:0;color:#fff;line-height:1.2}
+  .cw-head small{color:#b9c4d3;font-size:12px}
+  .cw-head .x{margin-left:auto;background:none;border:0;color:#cdd6e2;font-size:24px;cursor:pointer;line-height:1;padding:4px}
+  .cw-body{padding:16px;max-height:52vh;overflow-y:auto;background:var(--bg-soft)}
+  .cw-msg{background:#fff;border:1px solid var(--line);border-radius:12px;border-bottom-left-radius:4px;padding:11px 14px;font-size:14px;line-height:1.5;color:var(--ink);margin-bottom:10px;max-width:90%}
+  .cw-msg.me{background:var(--navy);color:#fff;border-color:var(--navy);margin-left:auto;border-bottom-left-radius:12px;border-bottom-right-radius:4px}
+  .cw-hint{font-size:12px;color:var(--muted);text-align:center;margin:2px 0 10px}
+  .cw-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:2px}
+  .cw-chip{background:#fff;border:1px solid #cfd6e0;color:var(--navy);font-size:13px;padding:8px 13px;border-radius:30px;cursor:pointer;transition:.15s;font-family:inherit}
+  .cw-chip:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .cw-foot{padding:12px 14px;border-top:1px solid var(--line);background:#fff}
+  .cw-foot a{display:flex;align-items:center;justify-content:center;gap:8px;background:#1f8f5f;color:#fff;font-weight:600;font-size:14px;padding:11px;border-radius:9px}
+  .cw-foot a:hover{background:#1a7a51}
+  .cw-foot a.alt{background:var(--navy)}
+  .cw-foot a.alt:hover{background:var(--navy-2)}
+
+  .band-note{margin-top:22px;font-size:13.5px;color:#aeb9c9}
+  .form-alt{font-size:13px;color:var(--muted);text-align:center;margin-top:8px}
+  .form-alt a{color:var(--navy);font-weight:600}
+  .band-link{color:#fff;text-decoration:underline}
+  .agenda-form{background:#fff;border-radius:14px;padding:26px;margin:28px auto 0;max-width:680px;text-align:left}
+  .af-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .af-field{display:flex;flex-direction:column}
+  .af-full{grid-column:1 / -1}
+  .agenda-form label{font-size:13.5px;font-weight:600;color:var(--ink);margin-bottom:6px}
+  .agenda-form label .req{color:var(--gold-ink)}
+  .agenda-form input,.agenda-form select{width:100%;padding:11px 13px;border:1px solid #d7dce4;border-radius:9px;font-family:inherit;font-size:14.5px;color:var(--ink);background:#fff}
+  .agenda-form input:focus,.agenda-form select:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(21,41,68,.10)}
+  .agenda-form .btn-primary{width:100%;justify-content:center;margin-top:18px;background:var(--navy);color:#fff;border-color:var(--navy)}
+  .agenda-form .btn-primary:hover{background:var(--navy-2)}
+  .af-note{font-size:12.5px;color:var(--muted);margin-top:12px;text-align:center}
+  #agenda-embed iframe{width:100%;min-height:640px;border:0;border-radius:14px;background:#fff;display:block}
+
+  /* ============ RESPONSIVE ============ */
+  @media(max-width:900px){
+    .cards{grid-template-columns:1fr}
+    .hero-grid{grid-template-columns:1fr;gap:34px}
+    .hero-card{max-width:520px}
+    .split,.seg,.contact,.team{grid-template-columns:1fr;gap:36px}
+    .proc{grid-template-columns:1fr 1fr}
+    nav ul{display:none}
+    .menu-btn{display:block}
+    .nav-cta .btn-primary{display:none}
+    /* Menú móvil: panel sólido */
+    nav ul.open{display:flex;flex-direction:column;align-items:flex-start;position:absolute;top:72px;right:16px;left:16px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 20px;gap:8px;box-shadow:0 24px 60px -18px rgba(21,41,68,.45);z-index:130}
+    nav ul.open li{width:100%}
+    nav ul.open a{color:var(--ink);opacity:1}
+    nav ul.open .mob-cta{display:block;width:100%;margin-top:6px}
+    nav ul.open .mob-cta a{display:block;text-align:center;background:var(--navy);color:#fff;padding:12px;border-radius:9px}
+    .drop{position:static;transform:none;opacity:1;visibility:visible;background:transparent;border:0;box-shadow:none;padding:2px 0 8px 12px;min-width:0}
+    .drop a{color:var(--ink);padding:8px 4px;font-weight:400;white-space:normal}
+    .drop a:hover{background:transparent;color:var(--navy)}
+    .drop .sep{background:var(--line);margin:6px 4px}
+    .has-drop::after{display:none}
+    .has-drop .caret{display:none}
+  }
+  @media(max-width:560px){
+    main section{padding:60px 0}
+    .band{padding:40px 24px}
+    .hero .wrap{padding:70px 24px 78px}
+    .quote{padding:32px 26px}
+    form{padding:24px}
+    .af-grid{grid-template-columns:1fr}
+    .agenda-form{padding:20px}
+    .proc{grid-template-columns:1fr}
+    .cw-panel{right:12px;bottom:88px}
+    .cw-launch{right:16px;bottom:16px}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#inicio" aria-label="A&amp;P Asociados, inicio">
+      <img class="brand-logo" src="logo-ayp-crest.png" alt="Emblema de A&amp;P Asociados">
+      <span>A&amp;P Asociados<small>Estudio Jurídico</small></span>
+    </a>
+    <nav aria-label="Navegación principal"><ul id="menu-principal">
+      <li class="has-drop">
+        <a href="#areas" aria-haspopup="true">Servicios <span class="caret" aria-hidden="true">▾</span></a>
+        <div class="drop">
+          <a href="#areas">Derecho Penal</a>
+          <a href="#areas">Derecho de Familia</a>
+          <a href="#areas">Derecho Laboral</a>
+          <div class="sep" aria-hidden="true"></div>
+          <a href="#areas">Derecho Civil</a>
+          <a href="#areas">Derecho Comercial y Empresas</a>
+          <a href="#areas">Derecho Inmobiliario</a>
+          <a href="#areas">Cobranzas</a>
+          <a href="#areas">Herencias y Sucesiones</a>
+        </div>
+      </li>
+      <li><a href="#estudio">El Estudio</a></li>
+      <li><a href="#equipo">Equipo</a></li>
+      <li><a href="#proceso">Cómo trabajamos</a></li>
+      <li><a href="propiedades.html">Propiedades</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li class="mob-cta"><a href="#consulta">Agendar consulta</a></li>
+    </ul></nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="#consulta">Agendar consulta</a>
+      <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="contenido">
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Estudio jurídico en Chile · +4 años de experiencia</p>
+        <h1>Asesoría y defensa legal, con estrategia y trato cercano.</h1>
+        <p class="lead">Acompañamos a personas y empresas en Derecho Penal, de Familia y Laboral, entre otras áreas. Analizamos su caso y le decimos con claridad cómo podemos ayudarle.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#consulta">Agendar una consulta</a>
+          <a class="btn btn-ghost" href="#" data-wa data-wa-label>Escríbanos por WhatsApp</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="Qué considera el primer contacto">
+        <p class="hc-title">El primer contacto</p>
+        <ul>
+          <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Primera orientación sobre su caso</li>
+          <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Revisión inicial de su situación</li>
+          <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Atención reservada y confidencial</li>
+          <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Respuesta dentro del horario de oficina</li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<div class="trust">
+  <div class="wrap">
+    <div><span class="dot" aria-hidden="true">◆</span> <b>+4 años</b>&nbsp;de trayectoria</div>
+    <div><span class="dot" aria-hidden="true">◆</span> <b>Personas y empresas</b></div>
+    <div><span class="dot" aria-hidden="true">◆</span> Atención&nbsp;<b>reservada</b></div>
+    <div><span class="dot" aria-hidden="true">◆</span> Comunicación&nbsp;<b>clara</b></div>
+  </div>
+</div>
+
+<!-- ÁREAS -->
+<section id="areas">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Áreas de práctica</p>
+      <h2>En qué podemos ayudarle</h2>
+      <p>Concentramos nuestra experiencia en tres áreas principales, con asesoría integral en otras materias del derecho.</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="ico" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M5 7l7-4 7 4M4 10h4l-2 5a2 2 0 01-4 0zM16 10h4l-2 5a2 2 0 01-4 0z"/></svg>
+        </div>
+        <h3>Derecho Penal</h3>
+        <p>Si enfrenta una denuncia, imputación o investigación, lo defendemos y acompañamos en cada etapa del proceso, con una estrategia clara.</p>
+      </article>
+      <article class="card">
+        <div class="ico" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2 4 4 0 017 2c0 5.5-7 10-7 10z"/></svg>
+        </div>
+        <h3>Derecho de Familia</h3>
+        <p>Divorcios, pensiones de alimentos, cuidado personal y relación directa regular, resueltos con criterio y un trato reservado.</p>
+      </article>
+      <article class="card">
+        <div class="ico" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
+        </div>
+        <h3>Derecho Laboral</h3>
+        <p>Despidos, autodespidos y cobro de prestaciones. Defendemos sus derechos como trabajador o asesoramos a su empresa.</p>
+      </article>
+    </div>
+    <div class="more-areas">
+      <span class="lbl">También asesoramos en:</span>
+      <span>Derecho Civil</span>
+      <span>Derecho Comercial y Empresas</span>
+      <span>Derecho Inmobiliario</span>
+      <span>Cobranzas</span>
+      <span>Herencias y Sucesiones</span>
+    </div>
+  </div>
+</section>
+
+<!-- SEGMENTOS -->
+<section id="para-quien" class="estudio">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">A quién ayudamos</p>
+      <h2>Asesoría para personas y empresas</h2>
+    </div>
+    <div class="seg">
+      <article class="card">
+        <div class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></svg></div>
+        <div>
+          <h3>Personas</h3>
+          <p>Protegemos sus derechos en materias de familia, penales, laborales y civiles, con un acompañamiento cercano y claro en cada etapa.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M9 8h2M9 12h2M13 8h2M13 12h2M9 21v-4h6v4"/></svg></div>
+        <div>
+          <h3>Empresas</h3>
+          <p>Asesoría preventiva, contratos, constitución de sociedades y gestión legal para que su negocio opere con respaldo y tranquilidad.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PROPIEDADES (teaser hacia propiedades.html) -->
+<section id="propiedades-teaser">
+  <div class="wrap">
+    <div class="band" style="text-align:left">
+      <div style="display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;align-items:center">
+        <div style="max-width:600px">
+          <p class="eyebrow" style="color:var(--gold-soft)">Altas Cumbres Propiedades</p>
+          <h2 style="color:#fff">¿Busca comprar, vender o arrendar?</h2>
+          <p style="color:#cfd8e4;margin-top:14px">Altas Cumbres Propiedades, nuestro corretaje, gestiona la operación con respaldo jurídico: revisamos títulos, promesas y contratos para que sea segura de principio a fin.</p>
+        </div>
+        <a class="btn" href="propiedades.html" style="background:var(--gold);color:#152944;flex:0 0 auto">Ver propiedades</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EL ESTUDIO (con respaldo institucional, sin perfiles personales, según preferencia del cliente) -->
+<section id="estudio">
+  <div class="wrap split">
+    <div class="txt">
+      <p class="eyebrow">Sobre el estudio</p>
+      <h2>Un estudio cercano, con respaldo profesional</h2>
+      <p>En A&amp;P Asociados asesoramos y representamos a personas y empresas desde hace más de cuatro años, con trayectoria en Derecho de Familia, Penal y Civil, y asesoría integral a empresas en materias preventivas, contractuales y de gestión legal.</p>
+      <p>Trabajamos cada caso con dedicación: lo analizamos en detalle y definimos una estrategia acorde a sus objetivos, manteniendo siempre una comunicación clara.</p>
+      <ul class="values">
+        <li><span class="chk" aria-hidden="true">✓</span> Compromiso y responsabilidad con cada cliente</li>
+        <li><span class="chk" aria-hidden="true">✓</span> Ética, transparencia y confidencialidad</li>
+        <li><span class="chk" aria-hidden="true">✓</span> Estrategias a la medida de cada caso</li>
+        <li><span class="chk" aria-hidden="true">✓</span> Acompañamiento y comunicación permanente</li>
+      </ul>
+    </div>
+    <div class="quote">
+      <p class="q">“Defendemos los intereses de nuestros clientes con <span>profesionalismo, ética y responsabilidad</span>, entregando soluciones jurídicas oportunas.”</p>
+      <p class="by">A&amp;P Asociados</p>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPO (el cliente solicitó incluir a su equipo de trabajo) -->
+<section id="equipo">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Nuestro equipo</p>
+      <h2>Quiénes lo acompañan</h2>
+    </div>
+    <div class="team">
+      <article class="member">
+        <div class="avatar" aria-hidden="true">EP</div>
+        <h3>Endrix Peña Venegas</h3>
+        <p class="role">Socio · Fundador</p>
+        <p>Abogado con formación en Derecho y Gestión Empresarial. Asesora a personas y empresas en estudios de títulos, saneamientos, constitución de sociedades y contratos, con experiencia en la tramitación de causas ante juzgados civiles y de policía local.</p>
+      </article>
+      <article class="member">
+        <div class="avatar" aria-hidden="true">CA</div>
+        <h3>Carmen Gloria Aguilera Artigas</h3>
+        <p class="role">Socia · Representante Legal</p>
+        <p>Abogada con amplia trayectoria jurídica y académica, docente universitaria en Derecho Procesal. Magíster en Educación y diplomada en Derecho Sindical, con experiencia en insolvencia, reorganización y procedimientos concursales.</p>
+      </article>
+      <article class="member">
+        <div class="avatar" aria-hidden="true">CP</div>
+        <h3>Constanza Peña</h3>
+        <p class="role">Arquitecta · Colaboradora</p>
+        <p>Aporta apoyo técnico en materias vinculadas a propiedades y proyectos, disponible según los requerimientos de cada caso.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section class="estudio" id="proceso">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Cómo trabajamos</p>
+      <h2>Un proceso claro, de principio a fin</h2>
+      <p>Desde el primer contacto lo acompañamos con transparencia y comunicación permanente.</p>
+    </div>
+    <div class="proc">
+      <div class="p"><div class="num" aria-hidden="true">1</div><h3>Consulta inicial</h3><p>Escuchamos su caso y resolvemos sus primeras dudas.</p></div>
+      <div class="p"><div class="num" aria-hidden="true">2</div><h3>Análisis del caso</h3><p>Revisamos los antecedentes y evaluamos las mejores alternativas.</p></div>
+      <div class="p"><div class="num" aria-hidden="true">3</div><h3>Estrategia a medida</h3><p>Definimos un plan de acción adaptado a su situación.</p></div>
+      <div class="p"><div class="num" aria-hidden="true">4</div><h3>Acompañamiento</h3><p>Lo representamos y lo mantenemos informado en cada etapa.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONSULTA / AGENDAMIENTO -->
+<section id="consulta">
+  <div class="wrap">
+    <div class="band">
+      <h2>Agende su primera consulta</h2>
+      <p>Indíquenos el día y el horario que prefiere. Revisamos su solicitud y le confirmamos la hora por correo o WhatsApp.</p>
+
+      <!-- ============================================================
+           AGENDAMIENTO
+           Enfoque acorde al rubro: los estudios suelen "recibir solicitud de
+           hora y confirmar" (revisan la materia antes), por eso el formulario
+           solicita día/horario y NO confirma automáticamente.
+           Para pasar a un calendario con auto-reserva, complete
+           CONFIG.calendarUrl con la URL de Calendly, Google Appointment
+           Schedule o Cal.com: el sitio incrusta el calendario aquí y oculta
+           el formulario de solicitud.
+           ============================================================ -->
+      <div id="agenda-embed" hidden></div>
+
+      <form id="agenda-form" class="agenda-form" novalidate>
+        <div class="af-grid">
+          <div class="af-field">
+            <label for="ag-nombre">Nombre completo <span class="req" aria-hidden="true">*</span></label>
+            <input id="ag-nombre" name="nombre" type="text" placeholder="Su nombre" required aria-required="true">
+          </div>
+          <div class="af-field">
+            <label for="ag-contacto">Correo o teléfono <span class="req" aria-hidden="true">*</span></label>
+            <input id="ag-contacto" name="contacto" type="text" placeholder="Correo o teléfono" required aria-required="true">
+          </div>
+          <div class="af-field">
+            <label for="ag-materia">Materia</label>
+            <select id="ag-materia" name="materia">
+              <option value="">Seleccione un área…</option>
+              <option>Derecho Penal</option>
+              <option>Derecho de Familia</option>
+              <option>Derecho Laboral</option>
+              <option>Derecho Civil</option>
+              <option>Empresas / Comercial</option>
+              <option>Inmobiliario</option>
+              <option>Cobranzas</option>
+              <option>Herencias y Sucesiones</option>
+              <option>Otra</option>
+            </select>
+          </div>
+          <div class="af-field">
+            <label for="ag-dia">Día preferido</label>
+            <input id="ag-dia" name="dia" type="date">
+          </div>
+          <div class="af-field af-full">
+            <label for="ag-horario">Horario preferido</label>
+            <select id="ag-horario" name="horario">
+              <option value="">Sin preferencia</option>
+              <option>Mañana (09:00–13:00)</option>
+              <option>Tarde (15:00–18:00)</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Solicitar hora</button>
+        <p class="af-note">Su solicitud no confirma la hora automáticamente: revisaremos la disponibilidad y le confirmaremos a la brevedad. Sus datos son confidenciales.</p>
+        <p class="form-status" id="agenda-status" role="status" aria-live="polite"></p>
+      </form>
+
+      <!-- PAGO EN LÍNEA (futura iteración, NO visible al usuario):
+           integrar con Webpay, Flow, Mercado Pago u otro proveedor cuando el
+           cliente defina condiciones, monto, proveedor y credenciales. -->
+      <p class="band-note">¿Prefiere solo escribirnos? <a class="band-link" href="#contacto">Formulario de contacto</a> o <a class="band-link" href="#" data-wa data-wa-label>WhatsApp</a>.</p>
+
+      <!-- PAGO EN LÍNEA: aparece solo si CONFIG.paymentUrl tiene un link de pago
+           (Mercado Pago / Flow / Khipu / Webpay). Sin backend: es un enlace de cobro
+           que el estudio crea una vez en el panel del proveedor. -->
+      <div id="pago-online" hidden style="margin-top:26px;padding-top:24px;border-top:1px solid rgba(255,255,255,.14)">
+        <p style="color:#cfd8e4;font-size:15px;margin:0 0 14px">¿Ya coordinó su consulta? Realice el pago en línea de forma segura.</p>
+        <a class="btn" id="pago-btn" href="#" target="_blank" rel="noopener" style="background:var(--gold);color:#152944">Pagar mi consulta</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="estudio" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Preguntas frecuentes</p>
+      <h2>Resolvemos sus dudas</h2>
+    </div>
+    <div class="faq">
+      <details><summary>¿Qué áreas del derecho atienden?</summary><p>Nos especializamos en Derecho Penal, de Familia y Laboral. También asesoramos en Derecho Civil, Comercial y de Empresas, Inmobiliario, Cobranzas y Herencias y Sucesiones.</p></details>
+      <details><summary>¿Cómo agendo una consulta?</summary><p>En la sección «Agende su primera consulta» puede solicitar una hora indicando el día y el horario que prefiere. También puede escribirnos por el formulario de contacto o WhatsApp; en todos los casos revisamos su solicitud y le confirmamos el día y la hora.</p></details>
+      <details><summary>¿Atienden a personas y empresas?</summary><p>Sí. Asesoramos tanto a personas como a empresas, con acompañamiento en materias preventivas, contractuales y de gestión legal.</p></details>
+      <details><summary>¿La primera consulta es confidencial?</summary><p>Sí. Toda la información que comparta con nosotros se trata de forma reservada y confidencial, desde el primer contacto.</p></details>
+      <details><summary>¿Dónde están ubicados y en qué horario atienden?</summary><p>En Calle 18 de Septiembre 246, Edificio Centro Urbano 18S, Oficina 408. Atendemos de lunes a viernes, de 09:00 a 13:00 y de 15:00 a 18:00 horas.</p></details>
+      <details><summary>¿Cuánto cuesta una consulta?</summary><p>El valor dependerá de la materia y complejidad del caso. Antes de agendar, le informaremos las condiciones de atención y los pasos a seguir.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Contacto</p>
+      <h2>Estamos para ayudarle</h2>
+      <p>Déjenos sus datos y su consulta, y nos pondremos en contacto a la brevedad.</p>
+    </div>
+    <div class="contact">
+      <div class="info">
+        <div class="row">
+          <span class="ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <div><span>Oficina</span><b>Calle 18 de Septiembre 246, Edificio Centro Urbano 18S, Of. 408</b></div>
+        </div>
+        <div class="row">
+          <span class="ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+          <div><span>Correo</span><b><a href="mailto:gestionesjuridicas.ayp@gmail.com">gestionesjuridicas.ayp@gmail.com</a></b></div>
+        </div>
+        <div class="row">
+          <span class="ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <div><span>Horario</span><b>Lun a Vie · 09:00–13:00 y 15:00–18:00</b></div>
+        </div>
+        <div class="row">
+          <span class="ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.6a2 2 0 01-.5 2.1L8.1 9.5a16 16 0 006 6l1.1-1.1a2 2 0 012.1-.5c.8.3 1.7.5 2.6.6a2 2 0 011.7 2z"/></svg></span>
+          <!-- TELÉFONO / WHATSAPP: por definir. No inventar. Al confirmarlos,
+               completar CONFIG.telefono y CONFIG.whatsapp en el script del final. -->
+          <div><span>Teléfono / WhatsApp</span><b class="pending" data-phone>Disponible próximamente</b></div>
+        </div>
+      </div>
+
+      <!-- Formulario sin backend: al enviar, abre el correo del estudio con los
+           datos ya redactados (mailto). No simula un envío que no ocurre. -->
+      <form id="contact-form" novalidate>
+        <div class="field">
+          <label for="n">Nombre completo <span class="req" aria-hidden="true">*</span></label>
+          <input id="n" name="nombre" type="text" placeholder="Su nombre" required aria-required="true">
+        </div>
+        <div class="field">
+          <label for="e">Correo electrónico <span class="req" aria-hidden="true">*</span></label>
+          <input id="e" name="correo" type="email" placeholder="nombre@correo.cl" required aria-required="true">
+        </div>
+        <div class="field">
+          <label for="t">Teléfono (opcional)</label>
+          <input id="t" name="telefono" type="tel" placeholder="+56 9 ...">
+        </div>
+        <div class="field">
+          <label for="a">Materia de su consulta</label>
+          <select id="a" name="materia">
+            <option value="">Seleccione un área…</option>
+            <option>Derecho Penal</option>
+            <option>Derecho de Familia</option>
+            <option>Derecho Laboral</option>
+            <option>Derecho Civil</option>
+            <option>Empresas / Comercial</option>
+            <option>Inmobiliario</option>
+            <option>Cobranzas</option>
+            <option>Herencias y Sucesiones</option>
+            <option>Otra</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="m">Cuéntenos brevemente su caso <span class="req" aria-hidden="true">*</span></label>
+          <textarea id="m" name="mensaje" placeholder="Describa su situación…" required aria-required="true"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Enviar consulta</button>
+        <p class="form-note">Sus datos son confidenciales y se utilizan solo para responder su consulta.</p>
+        <p class="form-alt">¿Prefiere escribirnos directamente? <a href="mailto:gestionesjuridicas.ayp@gmail.com">gestionesjuridicas.ayp@gmail.com</a></p>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+
+    <div class="map">
+      <iframe title="Ubicación de la oficina de A&amp;P Asociados en el mapa" src="https://maps.google.com/maps?q=Calle%2018%20de%20Septiembre%20246%2C%20Edificio%20Centro%20Urbano%2018S&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <img src="logo-ayp-transparent.png" alt="A&amp;P Asociados — Estudio Jurídico" style="width:210px;max-width:100%;height:auto;display:block;margin-bottom:8px">
+        <p>Asesoría y defensa legal para personas y empresas, con compromiso y cercanía.</p>
+      </div>
+      <div>
+        <h4>Navegación</h4>
+        <nav aria-label="Pie de página">
+          <a href="#areas">Áreas de práctica</a>
+          <a href="#estudio">El Estudio</a>
+          <a href="#equipo">Equipo</a>
+          <a href="#proceso">Cómo trabajamos</a>
+          <a href="propiedades.html">Propiedades</a>
+          <a href="#faq">Preguntas frecuentes</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <nav aria-label="Datos de contacto">
+          <a href="#contacto">18 de Septiembre 246, Of. 408</a>
+          <a href="mailto:gestionesjuridicas.ayp@gmail.com">gestionesjuridicas.ayp@gmail.com</a>
+          <a href="#contacto">Lun a Vie · 09–13 y 15–18 h</a>
+        </nav>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2026 A&amp;P Asociados. Todos los derechos reservados.</span>
+      <span>Sitio desarrollado por Respondo</span>
+    </div>
+  </div>
+</footer>
+
+<!-- CHAT DE RESPUESTAS RÁPIDAS (respuestas automáticas a preguntas frecuentes; NO es IA) -->
+<div class="cw-panel" id="cwPanel" role="dialog" aria-label="Respuestas rápidas" aria-modal="false">
+  <div class="cw-head">
+    <div class="av" aria-hidden="true">A&amp;P</div>
+    <div><h4>A&amp;P Asociados</h4><small>Respondemos en horario de oficina</small></div>
+    <button class="x" id="cwClose" aria-label="Cerrar ventana de ayuda">&times;</button>
+  </div>
+  <div class="cw-body" id="cwBody">
+    <p class="cw-hint">Respuestas automáticas a preguntas frecuentes</p>
+    <div class="cw-msg">Bienvenido a A&amp;P Asociados. Seleccione una consulta frecuente:</div>
+    <div class="cw-chips" id="cwChips"></div>
+  </div>
+  <div class="cw-foot" id="cwFoot"></div>
+</div>
+<button class="cw-launch" id="cwLaunch" aria-label="Abrir respuestas rápidas" aria-expanded="false">
+  <svg id="cwIcon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 01-9 8.4 9 9 0 01-3.8-.8L3 20.5l1.4-4.2A8.4 8.4 0 1121 11.5z"/></svg>
+</button>
+
+<script>
+/* ================================================================
+   CONFIGURACIÓN DE CONTACTO
+   TODO cliente: completar con los datos reales cuando estén.
+   - whatsapp: solo números, formato internacional sin + ni espacios.
+     Ejemplo Chile: "56912345678". Déjelo vacío ("") si aún no hay.
+   - telefono: como se mostrará (ej "+56 2 2345 6789"). Vacío si no hay.
+   ================================================================ */
+var CONFIG = {
+  whatsapp: "",      // <-- INSERTAR número de WhatsApp real (ej "56912345678")
+  telefono: "",      // <-- INSERTAR teléfono real
+  email: "gestionesjuridicas.ayp@gmail.com",
+  formEndpoint: "",  // <-- INSERTAR URL del endpoint/servicio del formulario (Formspree, webhook o backend propio).
+                     //     Si queda vacío, el formulario abre el correo del estudio (respaldo).
+  calendarUrl: "",   // <-- INSERTAR URL de Calendly / Google Appointment Schedule / Cal.com.
+                     //     Si se completa, se incrusta el calendario en la sección de agenda
+                     //     y se oculta el formulario de "Solicitar hora".
+  paymentUrl: ""     // <-- INSERTAR "link de pago" de la consulta (Mercado Pago, Flow, Khipu o
+                     //     Webpay vía uno de ellos). El estudio lo crea una vez en el panel del
+                     //     proveedor; NO requiere backend. Si se completa, aparece el botón
+                     //     "Pagar mi consulta" en la sección de agenda. Vacío = botón oculto.
+};
+
+(function(){
+  var waMsg = encodeURIComponent("Hola, quisiera agendar una consulta jurídica con A&P Asociados.");
+
+  /* --- Canales de contacto: WhatsApp con fallback profesional --- */
+  var hasWa = CONFIG.whatsapp.replace(/\D/g,"").length >= 8;
+  document.querySelectorAll('[data-wa]').forEach(function(el){
+    if(hasWa){
+      el.href = 'https://wa.me/' + CONFIG.whatsapp.replace(/\D/g,"") + '?text=' + waMsg;
+      el.target = '_blank';
+      el.rel = 'noopener';
+    } else {
+      /* Sin número aún: en vez de un enlace roto, llevamos al formulario */
+      el.href = '#contacto';
+      if(el.hasAttribute('data-wa-label')) el.textContent = 'Escríbanos';
+      el.setAttribute('title','Pronto habilitaremos WhatsApp; mientras tanto, escríbanos por el formulario');
+    }
+  });
+
+  /* --- Teléfono en la ficha de contacto --- */
+  if(CONFIG.telefono){
+    document.querySelectorAll('[data-phone]').forEach(function(el){
+      el.classList.remove('pending');
+      el.innerHTML = '<a href="tel:' + CONFIG.telefono.replace(/[^\d+]/g,"") + '">' + CONFIG.telefono + '</a>';
+    });
+  }
+
+  /* --- Menú móvil (panel sólido, se cierra al elegir) --- */
+  var navList = document.querySelector('nav ul');
+  var menuBtn = document.querySelector('.menu-btn');
+  menuBtn.addEventListener('click', function(){
+    var open = navList.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    menuBtn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  });
+  navList.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      navList.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded','false');
+    });
+  });
+
+  /* --- Chat de respuestas rápidas (local, sin IA) --- */
+  var faqs = [
+    {q:"¿Qué áreas atienden?", a:"Nos especializamos en Derecho Penal, de Familia y Laboral. También asesoramos en Civil, Comercial y de Empresas, Inmobiliario, Cobranzas y Herencias y Sucesiones."},
+    {q:"¿Cómo agendo una consulta?", a:"Puede completar el formulario de contacto de esta página o escribirnos, y coordinamos día y hora."},
+    {q:"¿Atienden a empresas?", a:"Sí. Asesoramos tanto a personas como a empresas, en materias preventivas, contractuales y de gestión legal."},
+    {q:"¿La consulta es confidencial?", a:"Sí. Toda la información que comparta con nosotros se trata de forma reservada desde el primer contacto."},
+    {q:"¿Dónde están ubicados?", a:"En Calle 18 de Septiembre 246, Edificio Centro Urbano 18S, Oficina 408. Atendemos de lunes a viernes, de 09:00 a 13:00 y de 15:00 a 18:00 horas."},
+    {q:"¿Cuánto cuesta una consulta?", a:"El valor dependerá de la materia y complejidad del caso. Antes de agendar, le informaremos las condiciones de atención y los pasos a seguir."}
+  ];
+  var panel = document.getElementById('cwPanel'),
+      launch = document.getElementById('cwLaunch'),
+      icon = document.getElementById('cwIcon'),
+      body = document.getElementById('cwBody'),
+      chips = document.getElementById('cwChips'),
+      foot = document.getElementById('cwFoot');
+
+  faqs.forEach(function(f){
+    var c = document.createElement('button');
+    c.className = 'cw-chip'; c.type = 'button'; c.textContent = f.q;
+    c.addEventListener('click', function(){
+      var me = document.createElement('div'); me.className = 'cw-msg me'; me.textContent = f.q;
+      var bot = document.createElement('div'); bot.className = 'cw-msg'; bot.textContent = f.a;
+      body.insertBefore(me, chips); body.insertBefore(bot, chips);
+      body.scrollTop = body.scrollHeight;
+    });
+    chips.appendChild(c);
+  });
+
+  /* Pie del chat: WhatsApp si hay número; si no, botón al formulario */
+  if(hasWa){
+    foot.innerHTML = '<a href="https://wa.me/' + CONFIG.whatsapp.replace(/\D/g,"") + '?text=' + waMsg + '" target="_blank" rel="noopener">'
+      + '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.5 15.3L2 22l4.8-1.5A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-2.8.9.9-2.7-.2-.3A8 8 0 1112 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.8 1-.3.2-.5.1a6.5 6.5 0 01-1.9-1.2 7.2 7.2 0 01-1.3-1.7c-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 00-.7.3A2.8 2.8 0 006 8.9c0 1.7 1.2 3.3 1.4 3.5s2.4 3.7 5.8 5.1a6 6 0 002.6.6 2.5 2.5 0 001.6-1.1 2 2 0 00.2-1.1c-.1-.2-.3-.2-.5-.3z"/></svg> Hablar por WhatsApp</a>';
+  } else {
+    foot.innerHTML = '<a class="alt" href="#contacto">Ir al formulario de contacto</a>';
+  }
+  foot.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ toggleChat(false); }); });
+
+  function toggleChat(open){
+    panel.classList.toggle('open', open);
+    launch.setAttribute('aria-expanded', open ? 'true' : 'false');
+    icon.innerHTML = open
+      ? '<path d="M6 6l12 12M18 6L6 18"/>'
+      : '<path d="M21 11.5a8.4 8.4 0 01-9 8.4 9 9 0 01-3.8-.8L3 20.5l1.4-4.2A8.4 8.4 0 1121 11.5z"/>';
+  }
+  launch.addEventListener('click', function(){ toggleChat(!panel.classList.contains('open')); });
+  document.getElementById('cwClose').addEventListener('click', function(){ toggleChat(false); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && panel.classList.contains('open')) toggleChat(false); });
+
+  /* --- Formulario: validación básica + mailto (sin backend) --- */
+  var form = document.getElementById('contact-form');
+  var status = document.getElementById('form-status');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var nombre = form.nombre.value.trim(),
+        correo = form.correo.value.trim(),
+        telefono = form.telefono.value.trim(),
+        materia = form.materia.value,
+        mensaje = form.mensaje.value.trim();
+    var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo);
+
+    if(!nombre || !mensaje || !emailOk){
+      status.className = 'form-status err show';
+      status.textContent = 'Por favor complete su nombre, un correo válido y su consulta.';
+      return;
+    }
+    var data = { nombre:nombre, correo:correo, telefono:telefono, materia:materia, mensaje:mensaje };
+
+    /* OPCIÓN A — Endpoint/backend real (recomendado para producción).
+       Al completar CONFIG.formEndpoint, el formulario envía por POST y NO usa el correo. */
+    if(CONFIG.formEndpoint){
+      status.className = 'form-status show';
+      status.style.background = '#eef2f7'; status.style.color = '#33404f';
+      status.textContent = 'Enviando su consulta…';
+      fetch(CONFIG.formEndpoint, {
+        method:'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body: JSON.stringify(data)
+      }).then(function(r){ if(!r.ok) throw new Error(); return r; })
+        .then(function(){
+          form.reset();
+          status.style.cssText = ''; status.className = 'form-status ok show';
+          status.textContent = 'Gracias, recibimos su consulta. Le responderemos a la brevedad en horario de oficina.';
+        })
+        .catch(function(){
+          status.style.cssText = ''; status.className = 'form-status err show';
+          status.innerHTML = 'No pudimos enviar su consulta. Escríbanos directamente a <a href="mailto:' + CONFIG.email + '">' + CONFIG.email + '</a>.';
+        });
+      return;
+    }
+
+    /* OPCIÓN B — Sin backend aún: abre el correo del estudio con los datos ya
+       redactados. Es honesto (no simula un envío) y funciona hoy. */
+    var subject = 'Consulta web' + (materia ? ' — ' + materia : '');
+    var bodyLines = [
+      'Nombre: ' + nombre,
+      'Correo: ' + correo,
+      (telefono ? 'Teléfono: ' + telefono : ''),
+      (materia ? 'Materia: ' + materia : ''),
+      '',
+      'Consulta:',
+      mensaje
+    ].filter(Boolean).join('\n');
+    window.location.href = 'mailto:' + CONFIG.email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(bodyLines);
+    status.className = 'form-status ok show';
+    status.innerHTML = 'Se abrirá su aplicación de correo con la consulta lista para enviar. Si no se abre, escríbanos directamente a <a href="mailto:' + CONFIG.email + '">' + CONFIG.email + '</a>.';
+  });
+
+  /* --- Agendamiento ---
+     Si CONFIG.calendarUrl tiene URL (Calendly / Google Appointment / Cal.com),
+     se incrusta el calendario y se oculta el formulario de solicitud.
+     Si no, el visitante solicita una hora (día/horario) y la confirmamos. */
+  var agEmbed = document.getElementById('agenda-embed');
+  var agForm = document.getElementById('agenda-form');
+  if(CONFIG.calendarUrl && agEmbed && agForm){
+    var ifr = document.createElement('iframe');
+    ifr.src = CONFIG.calendarUrl; ifr.title = 'Agendar una consulta'; ifr.loading = 'lazy';
+    agEmbed.appendChild(ifr); agEmbed.hidden = false;
+    agForm.hidden = true;
+  }
+  if(agForm){
+    var agStatus = document.getElementById('agenda-status');
+    var diaInput = document.getElementById('ag-dia');
+    if(diaInput){ diaInput.min = new Date().toISOString().slice(0,10); }  /* no permite días pasados */
+    agForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var nombre = agForm.nombre.value.trim(),
+          contacto = agForm.contacto.value.trim(),
+          materia = agForm.materia.value,
+          dia = agForm.dia.value,
+          horario = agForm.horario.value;
+      if(!nombre || !contacto){
+        agStatus.className = 'form-status err show';
+        agStatus.textContent = 'Por favor indique su nombre y un dato de contacto.';
+        return;
+      }
+      var subject = 'Solicitud de hora' + (materia ? ' — ' + materia : '');
+      var lines = [
+        'Solicitud de hora de consulta',
+        'Nombre: ' + nombre,
+        'Contacto: ' + contacto,
+        (materia ? 'Materia: ' + materia : ''),
+        (dia ? 'Día preferido: ' + dia : ''),
+        (horario ? 'Horario preferido: ' + horario : '')
+      ].filter(Boolean).join('\n');
+
+      if(CONFIG.formEndpoint){
+        agStatus.className = 'form-status show';
+        agStatus.style.background = '#eef2f7'; agStatus.style.color = '#33404f';
+        agStatus.textContent = 'Enviando su solicitud…';
+        fetch(CONFIG.formEndpoint, {
+          method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
+          body: JSON.stringify({ tipo:'agenda', nombre:nombre, contacto:contacto, materia:materia, dia:dia, horario:horario })
+        }).then(function(r){ if(!r.ok) throw new Error(); return r; })
+          .then(function(){
+            agForm.reset(); agStatus.style.cssText = ''; agStatus.className = 'form-status ok show';
+            agStatus.textContent = 'Recibimos su solicitud de hora. Revisaremos la disponibilidad y le confirmaremos a la brevedad.';
+          })
+          .catch(function(){
+            agStatus.style.cssText = ''; agStatus.className = 'form-status err show';
+            agStatus.innerHTML = 'No pudimos enviar su solicitud. Escríbanos a <a href="mailto:' + CONFIG.email + '">' + CONFIG.email + '</a>.';
+          });
+        return;
+      }
+      window.location.href = 'mailto:' + CONFIG.email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines);
+      agStatus.className = 'form-status ok show';
+      agStatus.innerHTML = 'Se abrirá su correo con la solicitud de hora lista para enviar. Le confirmaremos la disponibilidad a la brevedad.';
+    });
+  }
+
+  /* --- Pago en línea (opcional): el botón aparece solo si hay link de pago --- */
+  var pagoWrap = document.getElementById('pago-online');
+  var pagoBtn = document.getElementById('pago-btn');
+  if(CONFIG.paymentUrl && pagoWrap && pagoBtn){
+    pagoBtn.href = CONFIG.paymentUrl;
+    pagoWrap.hidden = false;
+  }
+})();
+</script>
+
+<!-- Datos estructurados: estudio jurídico (SEO local) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "A&P Asociados",
+  "description": "Estudio jurídico en Chile con más de 4 años de experiencia en Derecho Penal, de Familia y Laboral para personas y empresas.",
+  "email": "gestionesjuridicas.ayp@gmail.com",
+  "priceRange": "$$",
+  "founder": { "@type": "Person", "name": "Endrix Peña Venegas", "jobTitle": "Socio y Fundador" },
+  "employee": [
+    { "@type": "Person", "name": "Endrix Peña Venegas", "jobTitle": "Socio y Fundador" },
+    { "@type": "Person", "name": "Carmen Gloria Aguilera Artigas", "jobTitle": "Socia y Representante Legal" }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle 18 de Septiembre 246, Edificio Centro Urbano 18S, Oficina 408",
+    "addressCountry": "CL"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "13:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "15:00", "closes": "18:00" }
+  ],
+  "areaServed": { "@type": "Country", "name": "Chile" },
+  "knowsAbout": ["Derecho Penal","Derecho de Familia","Derecho Laboral","Derecho Civil","Derecho Comercial","Derecho Inmobiliario","Cobranzas","Herencias y Sucesiones"]
+}
+</script>
+
+<!-- Datos estructurados: preguntas frecuentes -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "¿Qué áreas del derecho atienden?", "acceptedAnswer": { "@type": "Answer", "text": "Nos especializamos en Derecho Penal, de Familia y Laboral. También asesoramos en Derecho Civil, Comercial y de Empresas, Inmobiliario, Cobranzas y Herencias y Sucesiones." } },
+    { "@type": "Question", "name": "¿Cómo agendo una consulta?", "acceptedAnswer": { "@type": "Answer", "text": "En la sección «Agende su primera consulta» puede solicitar una hora indicando el día y el horario que prefiere. También puede escribirnos por el formulario de contacto o WhatsApp; en todos los casos revisamos su solicitud y le confirmamos el día y la hora." } },
+    { "@type": "Question", "name": "¿Atienden a personas y empresas?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Asesoramos tanto a personas como a empresas, con acompañamiento en materias preventivas, contractuales y de gestión legal." } },
+    { "@type": "Question", "name": "¿La primera consulta es confidencial?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Toda la información que comparta con nosotros se trata de forma reservada y confidencial desde el primer contacto." } },
+    { "@type": "Question", "name": "¿Dónde están ubicados y en qué horario atienden?", "acceptedAnswer": { "@type": "Answer", "text": "En Calle 18 de Septiembre 246, Edificio Centro Urbano 18S, Oficina 408. Atendemos de lunes a viernes, de 09:00 a 13:00 y de 15:00 a 18:00 horas." } },
+    { "@type": "Question", "name": "¿Cuánto cuesta una consulta?", "acceptedAnswer": { "@type": "Answer", "text": "El valor dependerá de la materia y complejidad del caso. Antes de agendar, le informaremos las condiciones de atención y los pasos a seguir." } }
+  ]
+}
+</script>
+
+<!-- ================================================================
+     DATOS PENDIENTES POR CONFIRMAR CON EL CLIENTE
+     (completar en CONFIG del script y/o en los TODO marcados arriba)
+     ----------------------------------------------------------------
+     [ ] WhatsApp real .............. CONFIG.whatsapp
+     [ ] Teléfono real .............. CONFIG.telefono
+     [ ] Endpoint del formulario .... CONFIG.formEndpoint (o servicio tipo Formspree)
+     [ ] Dominio definitivo ......... canonical + og:url (comentados en <head>)
+     [ ] Herramienta de agenda ...... Calendly / Google Calendar (sección "Agende su primera consulta")
+     [ ] Link de pago de consulta ... CONFIG.paymentUrl (Mercado Pago / Flow / Khipu / Webpay)
+     [ ] Correo con dominio propio .. si el cliente lo define (reemplaza al Gmail)
+     [ ] Redes sociales ............. si el cliente las confirma (agregar en footer + sameAs del schema)
+     [ ] Versión bilingüe ........... futura iteración (ver comentario IDIOMA en <head>)
+     ================================================================ -->
+</body>
+</html>
