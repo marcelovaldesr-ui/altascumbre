@@ -780,8 +780,8 @@ var CONFIG = {
   whatsapp: "",      // <-- INSERTAR número de WhatsApp real (ej "56912345678")
   telefono: "",      // <-- INSERTAR teléfono real
   email: "gestionesjuridicas.ayp@gmail.com",
-  formEndpoint: "",  // <-- INSERTAR URL del endpoint/servicio del formulario (Formspree, webhook o backend propio).
-                     //     Si queda vacío, el formulario abre el correo del estudio (respaldo).
+  formEndpoint: "https://formspree.io/f/xnjkewqo",  // Formspree: envía la consulta al correo del estudio automáticamente.
+                     //     Si se vacía, el formulario vuelve a abrir el correo del estudio (respaldo).
   calendarUrl: "",   // <-- INSERTAR URL de Calendly / Google Appointment Schedule / Cal.com.
                      //     Si se completa, se incrusta el calendario en la sección de agenda
                      //     y se oculta el formulario de "Solicitar hora".
@@ -897,7 +897,8 @@ var CONFIG = {
       status.textContent = 'Por favor complete su nombre, un correo válido y su consulta.';
       return;
     }
-    var data = { nombre:nombre, correo:correo, telefono:telefono, materia:materia, mensaje:mensaje };
+    var data = { nombre:nombre, correo:correo, telefono:telefono, materia:materia, mensaje:mensaje,
+                 _subject: 'Consulta web' + (materia ? ' — ' + materia : ''), _replyto: correo };
 
     /* OPCIÓN A — Endpoint/backend real (recomendado para producción).
        Al completar CONFIG.formEndpoint, el formulario envía por POST y NO usa el correo. */
@@ -983,7 +984,7 @@ var CONFIG = {
         agStatus.textContent = 'Enviando su solicitud…';
         fetch(CONFIG.formEndpoint, {
           method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
-          body: JSON.stringify({ tipo:'agenda', nombre:nombre, contacto:contacto, materia:materia, dia:dia, horario:horario })
+          body: JSON.stringify({ tipo:'agenda', nombre:nombre, contacto:contacto, materia:materia, dia:dia, horario:horario, _subject:'Solicitud de hora' + (materia ? ' — ' + materia : '') })
         }).then(function(r){ if(!r.ok) throw new Error(); return r; })
           .then(function(){
             agForm.reset(); agStatus.style.cssText = ''; agStatus.className = 'form-status ok show';
