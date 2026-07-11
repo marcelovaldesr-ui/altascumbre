@@ -61,8 +61,9 @@
   /* Intro */
   .phero{background:linear-gradient(160deg,#0f2036,#152944 60%,#1d3557);color:#fff}
   .phero .wrap{padding:64px 24px 72px}
-  .phero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
-  .phero-logo{width:100%;max-width:360px;height:auto;display:block;justify-self:end}
+  .phero{overflow:hidden}
+  .phero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:40px;align-items:center}
+  .phero-logo{width:100%;max-width:360px;height:auto;display:block;justify-self:end;min-width:0}
   @media(max-width:820px){.phero-grid{grid-template-columns:1fr;gap:24px}.phero-logo{max-width:280px;justify-self:start}}
   .phero .eyebrow{color:var(--gold-soft)}
   .phero h1{color:#fff;font-size:clamp(30px,4.4vw,44px);font-weight:700;letter-spacing:-.5px}
@@ -170,9 +171,9 @@
 
 <header>
   <div class="wrap nav">
-    <a class="brand" href="index.html" aria-label="A&amp;P Asociados, inicio">
-      <img class="brand-logo" src="logo-ayp-crest.png" alt="Emblema de A&amp;P Asociados">
-      <span>A&amp;P Asociados<small>Estudio Jurídico</small></span>
+    <a class="brand" href="propiedades.html" aria-label="Altas Cumbres Propiedades, inicio">
+      <img class="brand-logo" src="altascumbres-crest.png" alt="Emblema de Altas Cumbres Propiedades">
+      <span>Altas Cumbres<small>Propiedades</small></span>
     </a>
     <nav aria-label="Navegación principal"><ul id="menu-principal">
       <li><a href="index.html">Inicio</a></li>
