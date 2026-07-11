@@ -135,6 +135,7 @@
   .more-areas{margin-top:34px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
   .more-areas span{font-size:14.5px;color:var(--ink);background:var(--bg-soft);border:1px solid var(--line);padding:8px 16px;border-radius:40px}
   .more-areas .lbl{background:none;border:0;padding:0;color:var(--muted);font-weight:600}
+  .more-areas-text{margin-top:30px;color:var(--muted);font-size:16px;max-width:760px}
 
   /* Segmentos personas / empresas */
   .seg{display:grid;grid-template-columns:1fr 1fr;gap:22px}
@@ -157,7 +158,7 @@
   .quote .backing{margin-top:22px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);font-size:14.5px;color:#cdd6e2;line-height:1.6}
 
   /* Proceso */
-  .proc{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .proc{display:grid;grid-template-columns:repeat(auto-fit,minmax(178px,1fr));gap:18px}
   .proc .p{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 22px}
   .proc .num{width:42px;height:42px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-family:'Lora',serif;font-weight:600;font-size:17px;margin-bottom:16px;border:1px solid var(--gold-soft)}
   .proc h3{font-size:17px;margin-bottom:7px}
@@ -169,7 +170,10 @@
   .member .avatar{width:56px;height:56px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-family:'Lora',serif;font-weight:700;font-size:18px;border:1px solid var(--gold-soft);margin-bottom:16px}
   .member h3{font-size:18px;margin-bottom:3px}
   .member .role{font-size:13px;color:var(--gold-ink);font-weight:600;letter-spacing:.02em;margin-bottom:10px}
-  .member p{color:var(--muted);font-size:14.5px;line-height:1.6}
+  .member p{color:var(--muted);font-size:14.5px;line-height:1.6;margin-bottom:10px}
+  .member p:last-child{margin-bottom:0}
+  .team-2{grid-template-columns:1fr 1fr;max-width:920px;margin:0 auto}
+  .team-note{margin:26px auto 0;text-align:center;color:var(--muted);font-size:15.5px;max-width:720px}
 
   /* Consulta / CTA band */
   .band{background:linear-gradient(160deg,#152944,#1d3557);color:#fff;border-radius:20px;padding:56px 48px;text-align:center}
@@ -257,6 +261,9 @@
   .cw-foot a.alt:hover{background:var(--navy-2)}
 
   .band-note{margin-top:22px;font-size:13.5px;color:#aeb9c9}
+  .precio-aviso{margin-top:16px;font-size:16.5px;color:#fff}
+  .precio-aviso b{color:var(--gold-soft)}
+  .precio-nota{margin-top:6px;font-size:12.5px;color:#aeb9c9;max-width:560px;margin-left:auto;margin-right:auto}
   .form-alt{font-size:13px;color:var(--muted);text-align:center;margin-top:8px}
   .form-alt a{color:var(--navy);font-weight:600}
   .band-link{color:#fff;text-decoration:underline}
@@ -278,7 +285,7 @@
     .cards{grid-template-columns:1fr}
     .hero-grid{grid-template-columns:1fr;gap:34px}
     .hero-card{max-width:520px}
-    .split,.seg,.contact,.team{grid-template-columns:1fr;gap:36px}
+    .split,.seg,.contact,.team,.team-2{grid-template-columns:1fr;gap:36px}
     .proc{grid-template-columns:1fr 1fr}
     nav ul{display:none}
     .menu-btn{display:block}
@@ -356,8 +363,8 @@
     <div class="hero-grid">
       <div class="hero-copy">
         <p class="eyebrow">Estudio jurídico en Chile · +4 años de experiencia</p>
-        <h1>Asesoría y defensa legal, con estrategia y trato cercano.</h1>
-        <p class="lead">Acompañamos a personas y empresas en Derecho Penal, de Familia y Laboral, entre otras áreas. Analizamos su caso y le decimos con claridad cómo podemos ayudarle.</p>
+        <h1>Asesoría y representación jurídica para personas y empresas, con experiencia, estrategia y compromiso.</h1>
+        <p class="lead">Representamos y asesoramos a personas y empresas en materias de Derecho Penal, Familia, Laboral, Civil y Comercial, entregando soluciones jurídicas eficientes y una atención personalizada en cada caso.</p>
         <div class="actions">
           <a class="btn btn-primary" href="#consulta">Agendar una consulta</a>
           <a class="btn btn-ghost" href="#" data-wa data-wa-label>Escríbanos por WhatsApp</a>
@@ -366,9 +373,9 @@
       <aside class="hero-card" aria-label="Qué considera el primer contacto">
         <p class="hc-title">El primer contacto</p>
         <ul>
-          <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Primera orientación sobre su caso</li>
-          <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Revisión inicial de su situación</li>
-          <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Atención reservada y confidencial</li>
+          <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Consulta jurídica</li>
+          <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Revisión de antecedentes</li>
+          <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Atención confidencial y reservada</li>
           <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Respuesta dentro del horario de oficina</li>
         </ul>
       </aside>
@@ -381,7 +388,6 @@
   <div class="wrap">
     <div><span class="dot" aria-hidden="true">◆</span> <b>+4 años</b>&nbsp;de trayectoria</div>
     <div><span class="dot" aria-hidden="true">◆</span> <b>Personas y empresas</b></div>
-    <div><span class="dot" aria-hidden="true">◆</span> Atención&nbsp;<b>reservada</b></div>
     <div><span class="dot" aria-hidden="true">◆</span> Comunicación&nbsp;<b>clara</b></div>
   </div>
 </div>
@@ -390,9 +396,9 @@
 <section id="areas">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">Áreas de práctica</p>
+      <p class="eyebrow">Especialidades jurídicas</p>
       <h2>En qué podemos ayudarle</h2>
-      <p>Concentramos nuestra experiencia en tres áreas principales, con asesoría integral en otras materias del derecho.</p>
+      <p>Brindamos asesoría y representación legal en las siguientes materias:</p>
     </div>
     <div class="cards">
       <article class="card">
@@ -400,31 +406,24 @@
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M5 7l7-4 7 4M4 10h4l-2 5a2 2 0 01-4 0zM16 10h4l-2 5a2 2 0 01-4 0z"/></svg>
         </div>
         <h3>Derecho Penal</h3>
-        <p>Si enfrenta una denuncia, imputación o investigación, lo defendemos y acompañamos en cada etapa del proceso, con una estrategia clara.</p>
+        <p>Representación y defensa en investigaciones penales, procedimientos abreviados, juicios orales e interposición de querellas, con una estrategia jurídica sólida en cada etapa del proceso.</p>
       </article>
       <article class="card">
         <div class="ico" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2 4 4 0 017 2c0 5.5-7 10-7 10z"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="2.3"/><circle cx="17" cy="7" r="2.3"/><circle cx="12" cy="11.5" r="1.9"/><path d="M3 20v-1.6a4 4 0 018 0V20M13 20v-1.6a4 4 0 018 0V20M9.4 20v-1.1a2.6 2.6 0 015.2 0V20"/></svg>
         </div>
         <h3>Derecho de Familia</h3>
-        <p>Divorcios, pensiones de alimentos, cuidado personal y relación directa regular, resueltos con criterio y un trato reservado.</p>
+        <p>Tramitación de divorcios, alimentos, cuidado personal y relación directa y regular, con una atención cercana, reservada y eficiente.</p>
       </article>
       <article class="card">
         <div class="ico" aria-hidden="true">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
         </div>
         <h3>Derecho Laboral</h3>
-        <p>Despidos, autodespidos y cobro de prestaciones. Defendemos sus derechos como trabajador o asesoramos a su empresa.</p>
+        <p>Representación y defensa de trabajadores y empleadores en despidos, autodespidos, comparendos ante la Inspección del Trabajo, indemnizaciones y asesoría permanente a empresas.</p>
       </article>
     </div>
-    <div class="more-areas">
-      <span class="lbl">También asesoramos en:</span>
-      <span>Derecho Civil</span>
-      <span>Derecho Comercial y Empresas</span>
-      <span>Derecho Inmobiliario</span>
-      <span>Cobranzas</span>
-      <span>Herencias y Sucesiones</span>
-    </div>
+    <p class="more-areas-text">Además, brindamos asesoría integral en materias civiles, comerciales, inmobiliarias, cobranzas y sucesiones.</p>
   </div>
 </section>
 
@@ -432,7 +431,7 @@
 <section id="para-quien" class="estudio">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">A quién ayudamos</p>
+      <p class="eyebrow">A quiénes asesoramos</p>
       <h2>Asesoría para personas y empresas</h2>
     </div>
     <div class="seg">
@@ -440,14 +439,14 @@
         <div class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></svg></div>
         <div>
           <h3>Personas</h3>
-          <p>Protegemos sus derechos en materias de familia, penales, laborales y civiles, con un acompañamiento cercano y claro en cada etapa.</p>
+          <p>Brindamos asesoría y representación en materias de familia, derecho penal, laboral y civil, acompañando a nuestros clientes en cada etapa del proceso.</p>
         </div>
       </article>
       <article class="card">
         <div class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M9 8h2M9 12h2M13 8h2M13 12h2M9 21v-4h6v4"/></svg></div>
         <div>
           <h3>Empresas</h3>
-          <p>Asesoría preventiva, contratos, constitución de sociedades y gestión legal para que su negocio opere con respaldo y tranquilidad.</p>
+          <p>Prestamos asesoría jurídica permanente a empresas y emprendedores, apoyando la gestión contractual, societaria y la resolución de conflictos.</p>
         </div>
       </article>
     </div>
@@ -481,8 +480,8 @@
       <ul class="values">
         <li><span class="chk" aria-hidden="true">✓</span> Compromiso y responsabilidad con cada cliente</li>
         <li><span class="chk" aria-hidden="true">✓</span> Ética, transparencia y confidencialidad</li>
-        <li><span class="chk" aria-hidden="true">✓</span> Estrategias a la medida de cada caso</li>
-        <li><span class="chk" aria-hidden="true">✓</span> Acompañamiento y comunicación permanente</li>
+        <li><span class="chk" aria-hidden="true">✓</span> Estrategias jurídicas adaptadas a cada caso</li>
+        <li><span class="chk" aria-hidden="true">✓</span> Comunicación y acompañamiento permanente</li>
       </ul>
     </div>
     <div class="quote">
@@ -499,26 +498,23 @@
       <p class="eyebrow">Nuestro equipo</p>
       <h2>Quiénes lo acompañan</h2>
     </div>
-    <div class="team">
+    <div class="team team-2">
       <article class="member">
         <div class="avatar" aria-hidden="true">EP</div>
         <h3>Endrix Peña Venegas</h3>
         <p class="role">Socio · Fundador</p>
-        <p>Abogado con formación en Derecho y Gestión Empresarial. Asesora a personas y empresas en estudios de títulos, saneamientos, constitución de sociedades y contratos, con experiencia en la tramitación de causas ante juzgados civiles y de policía local.</p>
+        <p>Profesional con formación en Derecho y Gestión Empresarial, con experiencia en asesoría jurídica a personas y empresas, estudios de títulos, saneamientos y regularización de propiedades, constitución de sociedades, elaboración y revisión de contratos, escrituras públicas y gestión de documentos legales.</p>
+        <p>Cuenta con experiencia en la tramitación y seguimiento de causas ante juzgados civiles y de policía local, con una visión integral de las necesidades jurídicas y operativas de personas y empresas, y un enfoque práctico, estratégico y orientado a resultados.</p>
       </article>
       <article class="member">
         <div class="avatar" aria-hidden="true">CA</div>
         <h3>Carmen Gloria Aguilera Artigas</h3>
         <p class="role">Socia · Representante Legal</p>
-        <p>Abogada con amplia trayectoria jurídica y académica, docente universitaria en Derecho Procesal. Magíster en Educación y diplomada en Derecho Sindical, con experiencia en insolvencia, reorganización y procedimientos concursales.</p>
-      </article>
-      <article class="member">
-        <div class="avatar" aria-hidden="true">CP</div>
-        <h3>Constanza Peña</h3>
-        <p class="role">Arquitecta · Colaboradora</p>
-        <p>Aporta apoyo técnico en materias vinculadas a propiedades y proyectos, disponible según los requerimientos de cada caso.</p>
+        <p>Abogada con amplia experiencia en el ámbito jurídico y académico. Se desempeña como docente universitaria en Derecho Procesal y como Secretaria de Estudios de la carrera de Derecho, contribuyendo a la formación de futuros profesionales.</p>
+        <p>Magíster en Educación con mención en Docencia Universitaria, y diplomada en Derecho Sindical, en Inclusión y Diversidad y en Liderazgo con certificación internacional. Cuenta con sólida experiencia en insolvencia, reorganización y procedimientos concursales.</p>
       </article>
     </div>
+    <p class="team-note">Nuestro equipo jurídico se complementa con un <b>equipo interdisciplinario</b> de profesionales de apoyo, que aporta una mirada integral a cada caso.</p>
   </div>
 </section>
 
@@ -532,9 +528,10 @@
     </div>
     <div class="proc">
       <div class="p"><div class="num" aria-hidden="true">1</div><h3>Consulta inicial</h3><p>Escuchamos su caso y resolvemos sus primeras dudas.</p></div>
-      <div class="p"><div class="num" aria-hidden="true">2</div><h3>Análisis del caso</h3><p>Revisamos los antecedentes y evaluamos las mejores alternativas.</p></div>
-      <div class="p"><div class="num" aria-hidden="true">3</div><h3>Estrategia a medida</h3><p>Definimos un plan de acción adaptado a su situación.</p></div>
-      <div class="p"><div class="num" aria-hidden="true">4</div><h3>Acompañamiento</h3><p>Lo representamos y lo mantenemos informado en cada etapa.</p></div>
+      <div class="p"><div class="num" aria-hidden="true">2</div><h3>Revisión de antecedentes</h3><p>Revisamos la documentación y los hechos relevantes.</p></div>
+      <div class="p"><div class="num" aria-hidden="true">3</div><h3>Análisis del caso</h3><p>Evaluamos las alternativas y los pasos a seguir.</p></div>
+      <div class="p"><div class="num" aria-hidden="true">4</div><h3>Estrategia jurídica</h3><p>Definimos un plan de acción adaptado a su situación.</p></div>
+      <div class="p"><div class="num" aria-hidden="true">5</div><h3>Acompañamiento y representación</h3><p>Lo representamos y lo mantenemos informado en cada etapa.</p></div>
     </div>
   </div>
 </section>
@@ -545,6 +542,8 @@
     <div class="band">
       <h2>Agende su primera consulta</h2>
       <p>Indíquenos el día y el horario que prefiere. Revisamos su solicitud y le confirmamos la hora por correo o WhatsApp.</p>
+      <p class="precio-aviso">La consulta jurídica tiene un valor de <b>$25.000</b>, que se informa y coordina previamente.</p>
+      <p class="precio-nota">*El valor de la consulta se descuenta de los honorarios si contrata los servicios del estudio.</p>
 
       <!-- ============================================================
            AGENDAMIENTO
@@ -627,10 +626,11 @@
     <div class="faq">
       <details><summary>¿Qué áreas del derecho atienden?</summary><p>Nos especializamos en Derecho Penal, de Familia y Laboral. También asesoramos en Derecho Civil, Comercial y de Empresas, Inmobiliario, Cobranzas y Herencias y Sucesiones.</p></details>
       <details><summary>¿Cómo agendo una consulta?</summary><p>En la sección «Agende su primera consulta» puede solicitar una hora indicando el día y el horario que prefiere. También puede escribirnos por el formulario de contacto o WhatsApp; en todos los casos revisamos su solicitud y le confirmamos el día y la hora.</p></details>
+      <details><summary>¿Cuál es el valor de la consulta?</summary><p>La consulta jurídica tiene un valor de $25.000, que se informa y coordina previamente. Ese valor se descuenta de los honorarios si contrata los servicios del estudio.</p></details>
+      <details><summary>¿Atienden de manera telemática?</summary><p>Sí. Atendemos de forma presencial en nuestra oficina y también de manera telemática (videollamada), según su preferencia.</p></details>
+      <details><summary>¿Qué documentos debo llevar a la primera reunión?</summary><p>Le recomendamos traer su cédula de identidad y los documentos relacionados con su caso (contratos, notificaciones, resoluciones, correos u otros antecedentes). Si no cuenta con todos, igualmente podemos orientarlo.</p></details>
       <details><summary>¿Atienden a personas y empresas?</summary><p>Sí. Asesoramos tanto a personas como a empresas, con acompañamiento en materias preventivas, contractuales y de gestión legal.</p></details>
-      <details><summary>¿La primera consulta es confidencial?</summary><p>Sí. Toda la información que comparta con nosotros se trata de forma reservada y confidencial, desde el primer contacto.</p></details>
       <details><summary>¿Dónde están ubicados y en qué horario atienden?</summary><p>En Calle 18 de Septiembre 246, Edificio Centro Urbano 18S, Oficina 408. Atendemos de lunes a viernes, de 09:00 a 13:00 y de 15:00 a 18:00 horas.</p></details>
-      <details><summary>¿Cuánto cuesta una consulta?</summary><p>El valor dependerá de la materia y complejidad del caso. Antes de agendar, le informaremos las condiciones de atención y los pasos a seguir.</p></details>
     </div>
   </div>
 </section>
@@ -655,7 +655,7 @@
         </div>
         <div class="row">
           <span class="ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-          <div><span>Horario</span><b>Lun a Vie · 09:00–13:00 y 15:00–18:00</b></div>
+          <div><span>Horario</span><b>Lunes a viernes: 09:00 a 13:00 y 15:00 a 18:00 horas</b></div>
         </div>
         <div class="row">
           <span class="ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.6a2 2 0 01-.5 2.1L8.1 9.5a16 16 0 006 6l1.1-1.1a2 2 0 012.1-.5c.8.3 1.7.5 2.6.6a2 2 0 011.7 2z"/></svg></span>
@@ -725,7 +725,7 @@
       <div>
         <h4>Navegación</h4>
         <nav aria-label="Pie de página">
-          <a href="#areas">Áreas de práctica</a>
+          <a href="#areas">Especialidades jurídicas</a>
           <a href="#estudio">El Estudio</a>
           <a href="#equipo">Equipo</a>
           <a href="#proceso">Cómo trabajamos</a>
@@ -739,7 +739,7 @@
         <nav aria-label="Datos de contacto">
           <a href="#contacto">18 de Septiembre 246, Of. 408</a>
           <a href="mailto:gestionesjuridicas.ayp@gmail.com">gestionesjuridicas.ayp@gmail.com</a>
-          <a href="#contacto">Lun a Vie · 09–13 y 15–18 h</a>
+          <a href="#contacto">Lunes a viernes: 09:00–13:00 y 15:00–18:00</a>
         </nav>
       </div>
     </div>
@@ -835,11 +835,11 @@ var CONFIG = {
   /* --- Chat de respuestas rápidas (local, sin IA) --- */
   var faqs = [
     {q:"¿Qué áreas atienden?", a:"Nos especializamos en Derecho Penal, de Familia y Laboral. También asesoramos en Civil, Comercial y de Empresas, Inmobiliario, Cobranzas y Herencias y Sucesiones."},
+    {q:"¿Cuál es el valor de la consulta?", a:"La consulta jurídica tiene un valor de $25.000, que se informa y coordina previamente. Se descuenta de los honorarios si contrata los servicios del estudio."},
     {q:"¿Cómo agendo una consulta?", a:"Puede completar el formulario de contacto de esta página o escribirnos, y coordinamos día y hora."},
+    {q:"¿Atienden de manera telemática?", a:"Sí. Atendemos de forma presencial y también por videollamada, según su preferencia."},
     {q:"¿Atienden a empresas?", a:"Sí. Asesoramos tanto a personas como a empresas, en materias preventivas, contractuales y de gestión legal."},
-    {q:"¿La consulta es confidencial?", a:"Sí. Toda la información que comparta con nosotros se trata de forma reservada desde el primer contacto."},
-    {q:"¿Dónde están ubicados?", a:"En Calle 18 de Septiembre 246, Edificio Centro Urbano 18S, Oficina 408. Atendemos de lunes a viernes, de 09:00 a 13:00 y de 15:00 a 18:00 horas."},
-    {q:"¿Cuánto cuesta una consulta?", a:"El valor dependerá de la materia y complejidad del caso. Antes de agendar, le informaremos las condiciones de atención y los pasos a seguir."}
+    {q:"¿Dónde están ubicados?", a:"En Calle 18 de Septiembre 246, Edificio Centro Urbano 18S, Oficina 408. Atendemos de lunes a viernes, de 09:00 a 13:00 y de 15:00 a 18:00 horas."}
   ];
   var panel = document.getElementById('cwPanel'),
       launch = document.getElementById('cwLaunch'),
@@ -1048,10 +1048,11 @@ var CONFIG = {
   "mainEntity": [
     { "@type": "Question", "name": "¿Qué áreas del derecho atienden?", "acceptedAnswer": { "@type": "Answer", "text": "Nos especializamos en Derecho Penal, de Familia y Laboral. También asesoramos en Derecho Civil, Comercial y de Empresas, Inmobiliario, Cobranzas y Herencias y Sucesiones." } },
     { "@type": "Question", "name": "¿Cómo agendo una consulta?", "acceptedAnswer": { "@type": "Answer", "text": "En la sección «Agende su primera consulta» puede solicitar una hora indicando el día y el horario que prefiere. También puede escribirnos por el formulario de contacto o WhatsApp; en todos los casos revisamos su solicitud y le confirmamos el día y la hora." } },
+    { "@type": "Question", "name": "¿Cuál es el valor de la consulta?", "acceptedAnswer": { "@type": "Answer", "text": "La consulta jurídica tiene un valor de $25.000, que se informa y coordina previamente. Ese valor se descuenta de los honorarios si contrata los servicios del estudio." } },
+    { "@type": "Question", "name": "¿Atienden de manera telemática?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Atendemos de forma presencial en nuestra oficina y también de manera telemática (videollamada), según su preferencia." } },
+    { "@type": "Question", "name": "¿Qué documentos debo llevar a la primera reunión?", "acceptedAnswer": { "@type": "Answer", "text": "Le recomendamos traer su cédula de identidad y los documentos relacionados con su caso (contratos, notificaciones, resoluciones, correos u otros antecedentes). Si no cuenta con todos, igualmente podemos orientarlo." } },
     { "@type": "Question", "name": "¿Atienden a personas y empresas?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Asesoramos tanto a personas como a empresas, con acompañamiento en materias preventivas, contractuales y de gestión legal." } },
-    { "@type": "Question", "name": "¿La primera consulta es confidencial?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Toda la información que comparta con nosotros se trata de forma reservada y confidencial desde el primer contacto." } },
-    { "@type": "Question", "name": "¿Dónde están ubicados y en qué horario atienden?", "acceptedAnswer": { "@type": "Answer", "text": "En Calle 18 de Septiembre 246, Edificio Centro Urbano 18S, Oficina 408. Atendemos de lunes a viernes, de 09:00 a 13:00 y de 15:00 a 18:00 horas." } },
-    { "@type": "Question", "name": "¿Cuánto cuesta una consulta?", "acceptedAnswer": { "@type": "Answer", "text": "El valor dependerá de la materia y complejidad del caso. Antes de agendar, le informaremos las condiciones de atención y los pasos a seguir." } }
+    { "@type": "Question", "name": "¿Dónde están ubicados y en qué horario atienden?", "acceptedAnswer": { "@type": "Answer", "text": "En Calle 18 de Septiembre 246, Edificio Centro Urbano 18S, Oficina 408. Atendemos de lunes a viernes, de 09:00 a 13:00 y de 15:00 a 18:00 horas." } }
   ]
 }
 </script>

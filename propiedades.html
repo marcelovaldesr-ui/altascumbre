@@ -95,6 +95,23 @@
   .prop .more{margin-top:12px;color:var(--navy);font-weight:600;font-size:14px;display:flex;align-items:center;gap:6px}
   .empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:40px 0}
 
+  /* Por qué elegir + servicios */
+  .section-head{max-width:720px;margin-bottom:40px}
+  .section-head .eyebrow{margin-bottom:12px}
+  .section-head h2{font-size:clamp(25px,3.2vw,34px)}
+  .section-head p{margin-top:14px;color:var(--muted);font-size:16.5px}
+  .porque{background:var(--bg-soft);border-top:1px solid var(--line)}
+  .reasons{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+  .reason{border:1px solid var(--line);border-radius:14px;background:#fff;padding:26px 24px}
+  .reason .ico{width:46px;height:46px;border-radius:11px;background:var(--bg-soft);border:1px solid var(--line);display:grid;place-items:center;color:var(--navy);margin-bottom:16px}
+  .reason h3{font-size:18px;margin-bottom:8px}
+  .reason p{color:var(--muted);font-size:14.5px;line-height:1.6}
+  .serv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .serv{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:12px;background:#fff;padding:15px 18px;font-size:15px;color:var(--ink)}
+  .serv svg{color:var(--gold-ink);flex:0 0 auto}
+  @media(max-width:900px){ .serv-grid{grid-template-columns:1fr 1fr} }
+  @media(max-width:620px){ .serv-grid{grid-template-columns:1fr} }
+
   /* CTA vender */
   .sell{background:var(--bg-soft);border-top:1px solid var(--line)}
   .sell .card{background:linear-gradient(160deg,#152944,#1d3557);color:#fff;border-radius:20px;padding:48px 40px;text-align:center}
@@ -201,12 +218,72 @@
   </div>
 </section>
 
+<!-- ¿POR QUÉ ELEGIR? -->
+<section id="porque" class="porque">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">¿Por qué elegir Altas Cumbres Propiedades?</p>
+      <h2>Su propiedad merece respaldo profesional y jurídico</h2>
+      <p>La compra, venta y arriendo de bienes inmuebles involucra decisiones importantes que pueden afectar su patrimonio. Para nosotros, el corretaje no consiste solo en publicar una propiedad, sino en entregar seguridad, respaldo y tranquilidad durante todo el proceso.</p>
+    </div>
+    <div class="reasons">
+      <article class="reason">
+        <div class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Respaldo jurídico permanente</h3>
+        <p>Contamos con el apoyo de profesionales del área jurídica para asesorarlo en cada etapa del proceso.</p>
+      </article>
+      <article class="reason">
+        <div class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2.5 20a5.5 5.5 0 0111 0M12.5 20a5.5 5.5 0 0111 0"/></svg></div>
+        <h3>Equipo multidisciplinario</h3>
+        <p>Integramos abogados y profesionales técnicos para abordar cada operación desde una perspectiva integral.</p>
+      </article>
+      <article class="reason">
+        <div class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg></div>
+        <h3>Protección de su patrimonio</h3>
+        <p>Trabajamos con promesas de compraventa, contratos y revisión documental para resguardar sus intereses.</p>
+      </article>
+      <article class="reason">
+        <div class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div>
+        <h3>Seguridad y transparencia</h3>
+        <p>Revisamos antecedentes y documentación para prevenir inconvenientes legales futuros.</p>
+      </article>
+      <article class="reason">
+        <div class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></svg></div>
+        <h3>Asesoría personalizada</h3>
+        <p>Lo acompañamos desde el primer contacto hasta la finalización de la operación.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- NUESTROS SERVICIOS -->
+<section id="servicios">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Nuestros servicios</p>
+      <h2>Todo el proceso inmobiliario, en un solo lugar</h2>
+    </div>
+    <div class="serv-grid">
+      <div class="serv"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Compra y venta de propiedades</div>
+      <div class="serv"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Arriendo y administración de inmuebles</div>
+      <div class="serv"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Estudios de títulos</div>
+      <div class="serv"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Promesas de compraventa</div>
+      <div class="serv"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Elaboración y revisión de contratos</div>
+      <div class="serv"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Tasaciones y evaluación de propiedades</div>
+      <div class="serv"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Regularización y saneamiento de inmuebles</div>
+      <div class="serv"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Asesoría jurídica inmobiliaria</div>
+      <div class="serv"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Gestión y acompañamiento integral</div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA: ¿quiere vender/arrendar? -->
 <section class="sell">
   <div class="wrap">
     <div class="card">
+      <p class="eyebrow" style="color:var(--gold-soft)">No espere a que aparezcan los problemas</p>
       <h2>¿Tiene una propiedad para vender o arrendar?</h2>
-      <p>Publicamos su propiedad y gestionamos la operación con respaldo legal: tasación referencial, difusión, negociación y contratos.</p>
+      <p>La mejor forma de proteger su patrimonio es actuar de forma preventiva, con el respaldo de profesionales comprometidos con la seguridad de su inversión. Publicamos su propiedad y gestionamos la operación con respaldo legal: tasación referencial, difusión, negociación y contratos.</p>
       <div class="actions">
         <a class="btn btn-gold" href="index.html#contacto">Publicar mi propiedad</a>
         <a class="btn btn-wa" href="#" data-wa>Consultar por WhatsApp</a>
