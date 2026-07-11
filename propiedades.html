@@ -60,7 +60,10 @@
 
   /* Intro */
   .phero{background:linear-gradient(160deg,#0f2036,#152944 60%,#1d3557);color:#fff}
-  .phero .wrap{padding:64px 24px 72px;max-width:820px}
+  .phero .wrap{padding:64px 24px 72px}
+  .phero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+  .phero-logo{width:100%;max-width:360px;height:auto;display:block;justify-self:end}
+  @media(max-width:820px){.phero-grid{grid-template-columns:1fr;gap:24px}.phero-logo{max-width:280px;justify-self:start}}
   .phero .eyebrow{color:var(--gold-soft)}
   .phero h1{color:#fff;font-size:clamp(30px,4.4vw,44px);font-weight:700;letter-spacing:-.5px}
   .phero p{margin-top:18px;font-size:18px;color:#cfd8e4;max-width:640px}
@@ -187,14 +190,16 @@
 <main>
 <!-- INTRO -->
 <section class="phero">
-  <div class="wrap">
-    <p class="eyebrow">Altas Cumbres Propiedades</p>
-    <h1>Propiedades en venta y arriendo</h1>
-    <p>Le ayudamos a comprar, vender o arrendar con el respaldo jurídico de A&amp;P Asociados: revisamos títulos, contratos y promesas para que la operación sea segura de principio a fin.</p>
-    <p class="respaldo">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
-      Cada operación con acompañamiento y revisión legal.
-    </p>
+  <div class="wrap phero-grid">
+    <div>
+      <h1>Propiedades en venta y arriendo</h1>
+      <p>Le ayudamos a comprar, vender o arrendar con el respaldo jurídico de A&amp;P Asociados: revisamos títulos, contratos y promesas para que la operación sea segura de principio a fin.</p>
+      <p class="respaldo">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+        Cada operación con acompañamiento y revisión legal.
+      </p>
+    </div>
+    <img class="phero-logo" src="altascumbres-logo.png" alt="Altas Cumbres Propiedades — corretaje">
   </div>
 </section>
 
