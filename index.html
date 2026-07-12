@@ -288,6 +288,14 @@
   .af-note{font-size:12.5px;color:var(--muted);margin-top:12px;text-align:center}
   #agenda-embed iframe{width:100%;min-height:640px;border:0;border-radius:14px;background:#fff;display:block}
 
+  /* Clientes */
+  .clientes{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:46px 0}
+  .clientes-title{text-align:center;color:var(--muted);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-bottom:26px}
+  .client-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:20px}
+  .cl{background:#fff;border:1px solid var(--line);border-radius:12px;height:94px;width:150px;display:grid;place-items:center;padding:12px}
+  .cl img{max-height:100%;max-width:100%;object-fit:contain;filter:grayscale(1);opacity:.78;transition:.25s}
+  .cl:hover img{filter:none;opacity:1}
+
   /* ============ RESPONSIVE ============ */
   @media(max-width:900px){
     .cards{grid-template-columns:1fr}
@@ -495,6 +503,20 @@
     <div class="quote">
       <p class="q">“Defendemos los intereses de nuestros clientes con <span>profesionalismo, ética y responsabilidad</span>, entregando soluciones jurídicas oportunas.”</p>
       <p class="by">A&amp;P Asociados</p>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTES / CONFIANZA (logos entregados por el cliente) -->
+<section class="clientes" id="clientes">
+  <div class="wrap">
+    <p class="clientes-title">Instituciones y empresas que han confiado en nosotros</p>
+    <div class="client-logos">
+      <div class="cl"><img src="logo1.jpeg" alt="Colegio Providencia, Parral" loading="lazy"></div>
+      <div class="cl"><img src="logos2.jpeg" alt="Lácteos San Cristóbal" loading="lazy"></div>
+      <div class="cl"><img src="logo3.jpeg" alt="Supermercado La Torre" loading="lazy"></div>
+      <div class="cl"><img src="logo4.jpeg" alt="JR Ltda." loading="lazy"></div>
+      <div class="cl"><img src="logo5.jpeg" alt="Siembra Montessori, Chillán" loading="lazy"></div>
     </div>
   </div>
 </section>
