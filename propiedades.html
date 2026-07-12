@@ -44,19 +44,19 @@
   .eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-ink);font-weight:600;margin-bottom:14px}
 
   /* Header (igual que la home) */
-  header{position:sticky;top:0;z-index:100;background:rgba(18,34,58,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.10)}
+  header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
   .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
-  .brand{display:flex;align-items:center;gap:12px;font-family:'Lora',serif;font-weight:700;font-size:22px;color:#fff}
-  .brand .brand-logo{height:48px;width:auto;display:block;flex:0 0 auto}
-  .brand small{display:block;font-family:'Inter',sans-serif;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#aeb9c9;font-weight:500;margin-top:2px}
+  .brand{display:flex;align-items:center;gap:12px;font-family:'Lora',serif;font-weight:700;font-size:22px;color:var(--navy)}
+  .brand .brand-logo{height:50px;width:auto;display:block;flex:0 0 auto}
+  .brand small{display:block;font-family:'Inter',sans-serif;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-top:2px}
   nav ul{display:flex;gap:28px;list-style:none;font-size:15px;font-weight:500;align-items:center}
-  nav ul a{color:#dbe3ee;opacity:.9}
-  nav ul a:hover,nav ul a.active{opacity:1;color:#fff}
-  nav ul a.active{color:var(--gold-soft)}
+  nav ul a{color:var(--ink);opacity:.85}
+  nav ul a:hover,nav ul a.active{opacity:1;color:var(--navy)}
+  nav ul a.active{color:var(--gold-ink)}
   .nav-cta{display:flex;align-items:center;gap:14px}
   .nav-cta .btn-gold{padding:11px 20px}
   .mob-cta{display:none}
-  .menu-btn{display:none;background:none;border:0;font-size:26px;color:#fff;cursor:pointer;padding:6px}
+  .menu-btn{display:none;background:none;border:0;font-size:26px;color:var(--navy);cursor:pointer;padding:6px}
 
   /* Intro */
   .phero{background:linear-gradient(160deg,#0f2036,#152944 60%,#1d3557);color:#fff}
@@ -174,7 +174,7 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="propiedades.html" aria-label="Altas Cumbres Propiedades, inicio">
-      <img class="brand-logo" src="altascumbres-crest.png" alt="Emblema de Altas Cumbres Propiedades">
+      <img class="brand-logo" src="altascumbres-light.png" alt="Emblema de Altas Cumbres Propiedades">
       <span>Altas Cumbres<small>Propiedades</small></span>
     </a>
     <nav aria-label="Navegación principal"><ul id="menu-principal">
