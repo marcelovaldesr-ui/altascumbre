@@ -291,10 +291,12 @@
   /* Clientes */
   .clientes{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:46px 0}
   .clientes-title{text-align:center;color:var(--muted);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-bottom:26px}
-  /* Carrusel deslizante de logos, a todo el ancho, con bordes muy difuminados */
-  .marquee{position:relative;width:100%;overflow:hidden;padding:6px 0;
-    -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 18%,#000 82%,transparent 100%);
-    mask-image:linear-gradient(90deg,transparent 0,#000 18%,#000 82%,transparent 100%)}
+  /* Carrusel deslizante de logos, a todo el ancho. Los bordes se cubren con un
+     degradado del color del fondo (no usa mask-image, funciona en todo navegador). */
+  .marquee{position:relative;width:100%;overflow:hidden;padding:6px 0}
+  .marquee::before,.marquee::after{content:"";position:absolute;top:0;bottom:0;width:18%;max-width:240px;z-index:2;pointer-events:none}
+  .marquee::before{left:0;background:linear-gradient(90deg,var(--bg-soft) 38%,rgba(246,248,251,0) 100%)}
+  .marquee::after{right:0;background:linear-gradient(270deg,var(--bg-soft) 38%,rgba(246,248,251,0) 100%)}
   .marquee-track{display:flex;align-items:center;width:max-content;
     animation:cl-marquee 30s linear infinite;will-change:transform}
   .marquee:hover .marquee-track,.marquee:focus-within .marquee-track{animation-play-state:paused}
@@ -303,7 +305,7 @@
   .cl:hover img{filter:none;opacity:1}
   @keyframes cl-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
   @media(prefers-reduced-motion:reduce){
-    .marquee{-webkit-mask-image:none;mask-image:none}
+    .marquee::before,.marquee::after{display:none}
     .marquee-track{animation:none;flex-wrap:wrap;justify-content:center;width:100%;row-gap:20px}
     .marquee-track .cl[aria-hidden="true"]{display:none}
   }
