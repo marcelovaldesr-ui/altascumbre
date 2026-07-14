@@ -291,19 +291,22 @@
   /* Clientes */
   .clientes{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:46px 0}
   .clientes-title{text-align:center;color:var(--muted);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-bottom:26px}
-  /* Logos de clientes: fila completa con flotación sutil (nunca se cortan) */
-  .client-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:22px}
-  .cl{background:#fff;border:1px solid var(--line);border-radius:12px;height:96px;width:154px;display:grid;place-items:center;padding:14px;
-    animation:cl-float 4s ease-in-out infinite;will-change:transform}
-  .cl:nth-child(2){animation-delay:.5s}
-  .cl:nth-child(3){animation-delay:1s}
-  .cl:nth-child(4){animation-delay:1.5s}
-  .cl:nth-child(5){animation-delay:2s}
-  .cl:hover{animation-play-state:paused}
+  /* Carrusel deslizante de logos, a todo el ancho, con bordes muy difuminados */
+  .marquee{position:relative;width:100%;overflow:hidden;padding:6px 0;
+    -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 18%,#000 82%,transparent 100%);
+    mask-image:linear-gradient(90deg,transparent 0,#000 18%,#000 82%,transparent 100%)}
+  .marquee-track{display:flex;align-items:center;width:max-content;
+    animation:cl-marquee 30s linear infinite;will-change:transform}
+  .marquee:hover .marquee-track,.marquee:focus-within .marquee-track{animation-play-state:paused}
+  .cl{background:#fff;border:1px solid var(--line);border-radius:12px;height:96px;width:154px;flex:0 0 auto;margin:0 11px;display:grid;place-items:center;padding:14px}
   .cl img{max-height:100%;max-width:100%;object-fit:contain;filter:grayscale(1);opacity:.8;transition:.25s}
   .cl:hover img{filter:none;opacity:1}
-  @keyframes cl-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-  @media(prefers-reduced-motion:reduce){ .cl{animation:none} }
+  @keyframes cl-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media(prefers-reduced-motion:reduce){
+    .marquee{-webkit-mask-image:none;mask-image:none}
+    .marquee-track{animation:none;flex-wrap:wrap;justify-content:center;width:100%;row-gap:20px}
+    .marquee-track .cl[aria-hidden="true"]{display:none}
+  }
 
   /* ============ RESPONSIVE ============ */
   @media(max-width:900px){
@@ -520,12 +523,31 @@
 <section class="clientes" id="clientes">
   <div class="wrap">
     <p class="clientes-title">Instituciones y empresas que han confiado en nosotros</p>
-    <div class="client-logos">
+  </div>
+  <div class="marquee">
+    <div class="marquee-track">
+      <!-- Juego visible (textos alternativos reales) -->
       <div class="cl"><img src="logo1.jpeg" alt="Colegio Providencia, Parral" loading="lazy"></div>
       <div class="cl"><img src="logos2.jpeg" alt="Lácteos San Cristóbal" loading="lazy"></div>
       <div class="cl"><img src="logo3.jpeg" alt="Supermercado La Torre" loading="lazy"></div>
       <div class="cl"><img src="logo4.jpeg" alt="JR Ltda." loading="lazy"></div>
       <div class="cl"><img src="logo5.jpeg" alt="Siembra Montessori, Chillán" loading="lazy"></div>
+      <!-- Copias para bucle continuo y llenado de pantallas anchas (ocultas a lectores de pantalla) -->
+      <div class="cl" aria-hidden="true"><img src="logo1.jpeg" alt="" loading="lazy"></div>
+      <div class="cl" aria-hidden="true"><img src="logos2.jpeg" alt="" loading="lazy"></div>
+      <div class="cl" aria-hidden="true"><img src="logo3.jpeg" alt="" loading="lazy"></div>
+      <div class="cl" aria-hidden="true"><img src="logo4.jpeg" alt="" loading="lazy"></div>
+      <div class="cl" aria-hidden="true"><img src="logo5.jpeg" alt="" loading="lazy"></div>
+      <div class="cl" aria-hidden="true"><img src="logo1.jpeg" alt="" loading="lazy"></div>
+      <div class="cl" aria-hidden="true"><img src="logos2.jpeg" alt="" loading="lazy"></div>
+      <div class="cl" aria-hidden="true"><img src="logo3.jpeg" alt="" loading="lazy"></div>
+      <div class="cl" aria-hidden="true"><img src="logo4.jpeg" alt="" loading="lazy"></div>
+      <div class="cl" aria-hidden="true"><img src="logo5.jpeg" alt="" loading="lazy"></div>
+      <div class="cl" aria-hidden="true"><img src="logo1.jpeg" alt="" loading="lazy"></div>
+      <div class="cl" aria-hidden="true"><img src="logos2.jpeg" alt="" loading="lazy"></div>
+      <div class="cl" aria-hidden="true"><img src="logo3.jpeg" alt="" loading="lazy"></div>
+      <div class="cl" aria-hidden="true"><img src="logo4.jpeg" alt="" loading="lazy"></div>
+      <div class="cl" aria-hidden="true"><img src="logo5.jpeg" alt="" loading="lazy"></div>
     </div>
   </div>
 </section>
