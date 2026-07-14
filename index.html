@@ -292,11 +292,11 @@
   .clientes{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:46px 0}
   .clientes-title{text-align:center;color:var(--muted);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-bottom:26px}
   /* Carrusel continuo de logos */
-  .marquee{position:relative;width:100%;overflow:hidden;
-    -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
-    mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+  .marquee{position:relative;width:100%;overflow:hidden;padding:4px 0;
+    -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 11%,#000 89%,transparent 100%);
+    mask-image:linear-gradient(90deg,transparent 0,#000 11%,#000 89%,transparent 100%)}
   .marquee-track{display:flex;align-items:center;width:max-content;
-    animation:cl-marquee 34s linear infinite;will-change:transform}
+    animation:cl-marquee 42s linear infinite;will-change:transform}
   .marquee:hover .marquee-track,.marquee:focus-within .marquee-track{animation-play-state:paused}
   .cl{background:#fff;border:1px solid var(--line);border-radius:12px;height:94px;width:150px;flex:0 0 auto;margin:0 10px;display:grid;place-items:center;padding:12px}
   .cl img{max-height:100%;max-width:100%;object-fit:contain;filter:grayscale(1);opacity:.78;transition:.25s}
@@ -305,6 +305,7 @@
   @media(prefers-reduced-motion:reduce){
     .marquee{-webkit-mask-image:none;mask-image:none}
     .marquee-track{animation:none;flex-wrap:wrap;justify-content:center;width:100%;row-gap:20px}
+    .marquee-track .cl[aria-hidden="true"]{display:none}
   }
 
   /* ============ RESPONSIVE ============ */
@@ -522,20 +523,31 @@
 <section class="clientes" id="clientes">
   <div class="wrap">
     <p class="clientes-title">Instituciones y empresas que han confiado en nosotros</p>
-    <div class="marquee">
-      <div class="marquee-track">
-        <div class="cl"><img src="logo1.jpeg" alt="Colegio Providencia, Parral" loading="lazy"></div>
-        <div class="cl"><img src="logos2.jpeg" alt="Lácteos San Cristóbal" loading="lazy"></div>
-        <div class="cl"><img src="logo3.jpeg" alt="Supermercado La Torre" loading="lazy"></div>
-        <div class="cl"><img src="logo4.jpeg" alt="JR Ltda." loading="lazy"></div>
-        <div class="cl"><img src="logo5.jpeg" alt="Siembra Montessori, Chillán" loading="lazy"></div>
-        <!-- copia para el bucle continuo (oculta a lectores de pantalla) -->
-        <div class="cl" aria-hidden="true"><img src="logo1.jpeg" alt="" loading="lazy"></div>
-        <div class="cl" aria-hidden="true"><img src="logos2.jpeg" alt="" loading="lazy"></div>
-        <div class="cl" aria-hidden="true"><img src="logo3.jpeg" alt="" loading="lazy"></div>
-        <div class="cl" aria-hidden="true"><img src="logo4.jpeg" alt="" loading="lazy"></div>
-        <div class="cl" aria-hidden="true"><img src="logo5.jpeg" alt="" loading="lazy"></div>
-      </div>
+  </div>
+  <div class="marquee">
+    <div class="marquee-track">
+      <!-- Juego visible (con textos alternativos reales) -->
+      <div class="cl"><img src="logo1.jpeg" alt="Colegio Providencia, Parral" loading="lazy"></div>
+      <div class="cl"><img src="logos2.jpeg" alt="Lácteos San Cristóbal" loading="lazy"></div>
+      <div class="cl"><img src="logo3.jpeg" alt="Supermercado La Torre" loading="lazy"></div>
+      <div class="cl"><img src="logo4.jpeg" alt="JR Ltda." loading="lazy"></div>
+      <div class="cl"><img src="logo5.jpeg" alt="Siembra Montessori, Chillán" loading="lazy"></div>
+      <!-- Copias para el bucle continuo y para llenar pantallas anchas (ocultas a lectores de pantalla) -->
+      <div class="cl" aria-hidden="true"><img src="logo1.jpeg" alt="" loading="lazy"></div>
+      <div class="cl" aria-hidden="true"><img src="logos2.jpeg" alt="" loading="lazy"></div>
+      <div class="cl" aria-hidden="true"><img src="logo3.jpeg" alt="" loading="lazy"></div>
+      <div class="cl" aria-hidden="true"><img src="logo4.jpeg" alt="" loading="lazy"></div>
+      <div class="cl" aria-hidden="true"><img src="logo5.jpeg" alt="" loading="lazy"></div>
+      <div class="cl" aria-hidden="true"><img src="logo1.jpeg" alt="" loading="lazy"></div>
+      <div class="cl" aria-hidden="true"><img src="logos2.jpeg" alt="" loading="lazy"></div>
+      <div class="cl" aria-hidden="true"><img src="logo3.jpeg" alt="" loading="lazy"></div>
+      <div class="cl" aria-hidden="true"><img src="logo4.jpeg" alt="" loading="lazy"></div>
+      <div class="cl" aria-hidden="true"><img src="logo5.jpeg" alt="" loading="lazy"></div>
+      <div class="cl" aria-hidden="true"><img src="logo1.jpeg" alt="" loading="lazy"></div>
+      <div class="cl" aria-hidden="true"><img src="logos2.jpeg" alt="" loading="lazy"></div>
+      <div class="cl" aria-hidden="true"><img src="logo3.jpeg" alt="" loading="lazy"></div>
+      <div class="cl" aria-hidden="true"><img src="logo4.jpeg" alt="" loading="lazy"></div>
+      <div class="cl" aria-hidden="true"><img src="logo5.jpeg" alt="" loading="lazy"></div>
     </div>
   </div>
 </section>
