@@ -545,9 +545,26 @@ var PROPIEDADES = [
     if(note){ note.style.display=""; note.textContent="Vista de ejemplo — aquí se publicarán las propiedades disponibles."; }
     render();
   }
+  // Caché en el navegador del visitante (3 min) para reducir llamadas a la API de Airtable.
+  // Los cambios en Airtable se ven al recargar; pueden tardar hasta 3 min si ya se cargó la página
+  // (forzar al instante con Ctrl+Shift+R). Ajustable cambiando CACHE_TTL.
+  var CACHE_KEY='ac_props_cache_v1', CACHE_TTL=3*60*1000;
+  function applyRecs(recs){
+    if(!recs || !recs.length){ useExamples(); return; }
+    DATA=recs; if(note){ note.style.display='none'; } render();
+  }
   function loadAirtable(){
     var A=CONFIG.airtable;
     if(!A || !A.token || !A.baseId){ useExamples(); return; }
+    // 1) Usar caché fresca si existe (evita gastar una llamada a la API).
+    try{
+      var raw=localStorage.getItem(CACHE_KEY);
+      if(raw){
+        var c=JSON.parse(raw);
+        if(c && c.d && (Date.now()-c.t) < CACHE_TTL){ applyRecs(c.d); return; }
+      }
+    }catch(e){}
+    // 2) Caché vencida o inexistente: pedir a Airtable y guardar.
     var url='https://api.airtable.com/v0/'+A.baseId+'/'+encodeURIComponent(A.tabla||'Propiedades')+'?pageSize=100';
     fetch(url,{headers:{Authorization:'Bearer '+A.token}})
       .then(function(r){ if(!r.ok) throw new Error('airtable'); return r.json(); })
@@ -562,10 +579,17 @@ var PROPIEDADES = [
             fotos:fotos, publicada:(f.Publicada!==false)
           };
         }).filter(function(p){ return p.publicada; });
-        if(!recs.length){ useExamples(); return; }
-        DATA=recs; if(note){ note.style.display='none'; } render();
+        try{ localStorage.setItem(CACHE_KEY, JSON.stringify({t:Date.now(), d:recs})); }catch(e){}
+        applyRecs(recs);
       })
-      .catch(function(){ useExamples(); });
+      .catch(function(){
+        // Si falla la red, usar la última caché aunque esté vencida antes de caer a ejemplos.
+        try{
+          var raw2=localStorage.getItem(CACHE_KEY);
+          if(raw2){ var c2=JSON.parse(raw2); if(c2 && c2.d && c2.d.length){ applyRecs(c2.d); return; } }
+        }catch(e){}
+        useExamples();
+      });
   }
   loadAirtable();
 })();
