@@ -627,8 +627,12 @@
             <input id="ag-nombre" name="nombre" type="text" placeholder="Su nombre" required aria-required="true">
           </div>
           <div class="af-field">
-            <label for="ag-contacto">Correo o teléfono <span class="req" aria-hidden="true">*</span></label>
-            <input id="ag-contacto" name="contacto" type="text" placeholder="Correo o teléfono" required aria-required="true">
+            <label for="ag-correo">Correo <span class="req" aria-hidden="true">*</span></label>
+            <input id="ag-correo" name="correo" type="email" placeholder="nombre@correo.cl" required aria-required="true">
+          </div>
+          <div class="af-field">
+            <label for="ag-telefono">Teléfono <span class="req" aria-hidden="true">*</span></label>
+            <input id="ag-telefono" name="telefono" type="tel" placeholder="+56 9 ..." required aria-required="true">
           </div>
           <div class="af-field">
             <label for="ag-materia">Materia</label>
@@ -740,8 +744,8 @@
           <input id="e" name="correo" type="email" placeholder="nombre@correo.cl" required aria-required="true">
         </div>
         <div class="field">
-          <label for="t">Teléfono (opcional)</label>
-          <input id="t" name="telefono" type="tel" placeholder="+56 9 ...">
+          <label for="t">Teléfono <span class="req" aria-hidden="true">*</span></label>
+          <input id="t" name="telefono" type="tel" placeholder="+56 9 ..." required aria-required="true">
         </div>
         <div class="field">
           <label for="a">Materia de su consulta</label>
@@ -954,10 +958,11 @@ var CONFIG = {
         materia = form.materia.value,
         mensaje = form.mensaje.value.trim();
     var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo);
+    var telOk = telefono.replace(/[^\d]/g,'').length >= 8;
 
-    if(!nombre || !mensaje || !emailOk){
+    if(!nombre || !mensaje || !emailOk || !telOk){
       status.className = 'form-status err show';
-      status.textContent = 'Por favor complete su nombre, un correo válido y su consulta.';
+      status.textContent = 'Por favor complete su nombre, un correo válido, su teléfono y su consulta.';
       return;
     }
     var data = { nombre:nombre, correo:correo, telefono:telefono, materia:materia, mensaje:mensaje,
@@ -1022,20 +1027,24 @@ var CONFIG = {
     agForm.addEventListener('submit', function(e){
       e.preventDefault();
       var nombre = agForm.nombre.value.trim(),
-          contacto = agForm.contacto.value.trim(),
+          correo = agForm.correo.value.trim(),
+          telefono = agForm.telefono.value.trim(),
           materia = agForm.materia.value,
           dia = agForm.dia.value,
           horario = agForm.horario.value;
-      if(!nombre || !contacto){
+      var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo);
+      var telOk = telefono.replace(/[^\d]/g,'').length >= 8;
+      if(!nombre || !emailOk || !telOk){
         agStatus.className = 'form-status err show';
-        agStatus.textContent = 'Por favor indique su nombre y un dato de contacto.';
+        agStatus.textContent = 'Por favor indique su nombre, un correo válido y su teléfono.';
         return;
       }
       var subject = 'Solicitud de hora' + (materia ? ' — ' + materia : '');
       var lines = [
         'Solicitud de hora de consulta',
         'Nombre: ' + nombre,
-        'Contacto: ' + contacto,
+        'Correo: ' + correo,
+        'Teléfono: ' + telefono,
         (materia ? 'Materia: ' + materia : ''),
         (dia ? 'Día preferido: ' + dia : ''),
         (horario ? 'Horario preferido: ' + horario : '')
@@ -1047,7 +1056,7 @@ var CONFIG = {
         agStatus.textContent = 'Enviando su solicitud…';
         fetch(CONFIG.formEndpoint, {
           method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
-          body: JSON.stringify({ tipo:'agenda', nombre:nombre, contacto:contacto, materia:materia, dia:dia, horario:horario, _subject:'Solicitud de hora' + (materia ? ' — ' + materia : '') })
+          body: JSON.stringify({ tipo:'agenda', nombre:nombre, correo:correo, telefono:telefono, materia:materia, dia:dia, horario:horario, _replyto:correo, _subject:'Solicitud de hora' + (materia ? ' — ' + materia : '') })
         }).then(function(r){ if(!r.ok) throw new Error(); return r; })
           .then(function(){
             agForm.reset(); agStatus.style.cssText = ''; agStatus.className = 'form-status ok show';
